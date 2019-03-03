@@ -102,7 +102,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="aMaZe" startnode="6" creator="Twine" creator-version="2.2.1" ifid="4ABE7286-8564-40C6-A25B-76F92E37EF76" zoom="0.25" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+	<div id="store-area" hidden><tw-storydata name="aMaZe" startnode="6" creator="Twine" creator-version="2.2.1" ifid="4ABE7286-8564-40C6-A25B-76F92E37EF76" zoom="0.6" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
 	background: white;
   	background-size: 100%;
 }
@@ -157,6 +157,7 @@ input:focus, input:hover, select:focus, select:hover, textarea:focus, textarea:h
 button {
   	display: inline-block;
   	background: #4285f4;
+  	margin-top: 12px;
   	color: #fff;
   	text-transform: uppercase;
   	padding: 10px 20px;
@@ -198,6 +199,20 @@ a:hover {
 .choice > a {
 	text-decoration: none;
 }
+
+.important_info {
+  	height: auto;
+  	border-radius: 3px;
+  	background: lightgray;
+  	padding-top: 4px;
+  	padding-bottom: 4px;
+  	padding-left: 12px;
+  	padding-right: 12px;
+	font-family: monospace;
+  	font-size: 16px;
+}
+
+
 
 
 
@@ -255,47 +270,69 @@ a:hover {
 
 
 
-</script><tw-passagedata pid="1" name="Intro" tags="" position="899,136" size="100,100">&lt;!--&lt;&lt;timed 0.3s&gt;&gt;&lt;&lt;audio typing volume 1 play&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+
+</script><tw-passagedata pid="1" name="Intro" tags="" position="899,129" size="100,100">&lt;&lt;timed 0.3s&gt;&gt;&lt;&lt;audio typing volume 1 play&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;typed-speed58&quot;&gt;
 &lt;span class=&quot;heading&quot;&gt;Welcome cave-dweller!!&lt;/span&gt;\
 &lt;p class=&quot;para&quot;&gt;This is an online text based adventure game wherein you are required to make decisions and solve problems using your instincts and intellectual abilities to move forward and to reach the ultimate goal...
 
 So boost yourselves up, to embark on this exciting adventure!!! 
 Kick start your journey using your wits...&lt;/p&gt;\
-&lt;/div&gt;--&gt;
-&lt;span class=&quot;slowfade para&quot;&gt;&lt;&lt;timed 2s transition&gt;&gt;[[Lets Begin!|Q0]]&lt;&lt;/timed&gt;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="1705,1" size="100,100">&lt;&lt;cacheaudio &quot;harry_theme&quot; &quot;music/HarryTheme.mp3&quot;&gt;&gt;
+&lt;/div&gt;
+&lt;span class=&quot;slowfade para&quot;&gt;&lt;&lt;timed 28s transition&gt;&gt;[[Lets Begin!|Q0]]&lt;&lt;/timed&gt;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="5057.333333333333,4417.333333333333" size="100,100">&lt;&lt;cacheaudio &quot;typing&quot; &quot;music/typing.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;harry_theme&quot; &quot;music/HarryTheme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;got_theme&quot; &quot;music/GotTheme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;thanos_theme&quot; &quot;music/ThanosTheme.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;typing&quot; &quot;music/typing.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;door&quot; &quot;music/Door.mp3&quot;&gt;&gt;
+&lt;&lt;set $harry_count = -1&gt;&gt;
+&lt;&lt;set $harry_count2 = -1&gt;&gt;
+&lt;&lt;set $harry_count3 = -1&gt;&gt;
+
+&lt;&lt;set $harry_tree = false&gt;&gt;
+&lt;&lt;set $danny_tree = false&gt;&gt;
+&lt;&lt;set $thanos_tree = false&gt;&gt;
+
+&lt;&lt;set $danny_count = -1&gt;&gt;
+&lt;&lt;set $thanos_count = -1&gt;&gt;
 &lt;&lt;set $q1_attempted = false&gt;&gt;
 &lt;&lt;set $q2_attempted = false&gt;&gt;
+&lt;&lt;set $entered_flying_car = false&gt;&gt;
+&lt;&lt;set $entered_buck_beak = false&gt;&gt;
+
 &lt;&lt;set $text_array = [&quot;Seems like your answer is incorrect&quot;, &quot;You came back!!&quot;, &quot;Thought you got it this time&quot;, &quot;You&#39;re still here!&quot;, &quot;You are falling back!&quot;, &quot;If you get it wrong this time you will be frozen for 5 minutes...&quot;]&gt;&gt;
+
+&lt;&lt;set $text_array1 = [&quot;Oops Thats wrong!&quot;, &quot;I thought you got it yhis time!&quot;, &quot;I Was not expecting this from you&quot;, &quot;WRONG!!!&quot;]&gt;&gt;
 
 &lt;&lt;set $blood_rider_1 = true&gt;&gt;
 &lt;&lt;set $blood_rider_2 = true&gt;&gt;
 &lt;&lt;set $blood_rider_3 = true&gt;&gt;
-</tw-passagedata><tw-passagedata pid="3" name="Q0" tags="" position="701,104" size="100,100">&lt;div class=&quot;para&quot;&gt;
-&lt;p&gt;To check you are witty and sharp enough to handle the difficulties en route, you need to solve the question which will lead you to the world of strength, magic and superpowers.
+&lt;&lt;set $attempted_gn6 = false&gt;&gt;
 
-So you think you are good with numbers!! 
-Count the no. Of natural numbers smaller than 2x10&lt;sup&gt;8&lt;/sup&gt; which can be written by means of digits 1 &amp; 2. 
-&lt;/p&gt;
-Think you have the right answer?:
-&lt;&lt;textbox &quot;$q0Ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|Q0_v1]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="Q0_v1" tags="" position="666,241" size="100,100">&lt;&lt;if $q0Ans == &quot;766&quot;&gt;&gt;
+&lt;&lt;set $wentwithJorah = false&gt;&gt;
+&lt;&lt;set $wentwithDaario = false&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Q0" tags="" position="757,119" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Before you start playing the &quot;actual game&quot;, lets see how witty you are...
+Solve these riddles and enter the multiverse of aMAZE...
+
+Q1: Who are YOU in UCSP 
+&lt;&lt;textbox &quot;$Q1_ans&quot; &quot;&quot;&gt;&gt;
+Q2: You&#39;re lost, scared! and all alone, you&#39;re only hope of survival is to keep on moving, your&#39;e probably in &lt;&lt;textbox &quot;$Q2_ans&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;button [[Submit|Q0_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="Q0_V" tags="" position="742,254" size="100,100">\&lt;&lt;set $Q1_ans = $Q1_ans.toLowerCase()&gt;&gt;
+&lt;&lt;if $Q1_ans == &quot;ubiquitous&quot; and $Q2_ans == &quot;aMAZE&quot;&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;You are right! [[Enter the game|choice_node]]&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;[[Try again|Q0]]&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="5" name="choice_node" tags="" position="901,256" size="100,100">&lt;span class=&quot;heading&quot;&gt;Congratulations!! You have entered the game.&lt;/span&gt;\
-&lt;&lt;set $harry_count = -1&gt;&gt;&lt;&lt;set $danny_count = -1&gt;&gt;&lt;&lt;set $thanos_count = -1&gt;&gt;\
+</tw-passagedata><tw-passagedata pid="5" name="choice_node" tags="" position="902,299" size="100,100">&lt;span class=&quot;heading&quot;&gt;Congratulations!! You have entered the game.&lt;/span&gt;\
 &lt;div class=&quot;para&quot;&gt;
 You have three paths to move ahead; you can help either [[HARRY POTTER|harry]], [[DAENERYS TARGARYEN|danny]] or [[THANOS|thanos]] in their journey. A vast sea of challenges awaits them in their quest...
 
 Choose wisely tread carefully...
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="6" name="Terms and Conditions" tags="" position="899,0" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;span class=&quot;heading&quot;&gt;Terms and Conditions: &lt;/span&gt;
+&lt;div style=&quot;padding-top: -0.5px; padding-bottom: -0.5px; padding-left: 12px; height: auto; width: auto; border-radius: 5px; color: #000; background: lightgray;&quot;&gt;&lt;p style=&quot;font-family: monospace; font-size: 16px;&quot; &gt;Please read this carefully, you will not see this page again in the future course of the game.&lt;/p&gt;&lt;/div&gt;
 &lt;span style=&quot;display:inline-block;&quot; class=&quot;dot&quot;&gt;&lt;/span&gt;&lt;b style=&quot;font-family: monospace;&quot;&gt; DISCLAIMER:&lt;/b&gt; This is a work of fiction. Names, characters, buisnesses, places, events, locales and incidents are either the products of the author&#39;s imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.
 
 &lt;span style=&quot;display:inline-block;&quot; class=&quot;dot&quot;&gt;&lt;/span&gt; Although this is an online game, local caching is involved. So do not clear the cache of your phone or you will lose your game progress.
@@ -307,7 +344,10 @@ Choose wisely tread carefully...
 &lt;span style=&quot;display:inline-block;&quot; class=&quot;dot&quot;&gt;&lt;/span&gt; Questions with more than one answers(like an array) should be answered by typing out the individual answers separated by a space. Ex: 1 2 3 4
 [[Accept and Continue|Intro]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="7" name="harry" tags="" position="716,459" size="100,100">&lt;&lt;audio harry_theme play loop&gt;&gt;&lt;&lt;set $harry_count = ($harry_count + 1)%7&gt;&gt;\
+</tw-passagedata><tw-passagedata pid="7" name="harry" tags="" position="673.3333333333334,513.3333333333334" size="100,100">\&lt;&lt;set $harry_tree = true&gt;&gt;
+\&lt;&lt;audio got_theme stop&gt;&gt;
+\&lt;&lt;audio thanos_theme stop&gt;&gt;
+&lt;&lt;audio harry_theme play loop&gt;&gt;&lt;&lt;set $harry_count = ($harry_count + 1)%7&gt;&gt;\
 &lt;&lt;if !$q1_attempted&gt;&gt;
 &lt;div class=&quot;heading&quot;&gt;Welcome to the wizard world!!&lt;/div&gt;\
 &lt;&lt;/if&gt;&gt;
@@ -318,12 +358,20 @@ In order to get some information, harry decided to visit the library at Hogwarts
 After searching for few hours he couldn’t find the related book.
 As he was about to return with disappointment, he saw the restricted sections.
 
-As expected the door was locked. With the wand in his hand, harry is trying to remember the appropriate spell. Help harry to unlock the door with a correct spell by solving &lt;span class=&quot;links&quot;&gt;[[this question|HQ1]]&lt;/span&gt;.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="danny" tags="" position="1540.6666666666667,472" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+As expected the door was locked. With the wand in his hand, harry is trying to remember the appropriate spell. Help harry to unlock the door with a correct spell by solving &lt;span class=&quot;links&quot;&gt;[[this question|HQ1]]&lt;/span&gt;.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="danny" tags="" position="5125,2146" size="100,100">\&lt;&lt;set $danny_tree = true&gt;&gt;
+\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+\&lt;&lt;audio thanos_theme stop&gt;&gt;
+\&lt;&lt;audio harry_theme stop&gt;&gt;
 \&lt;div class=&quot;heading&quot;&gt;Welcome to Game of Thrones, where you either win or die!!!&lt;/div&gt;
 \&lt;div class=&quot;para&quot;&gt;
 Journey begins with Daenerys Stormborn. Viserys informs danny that information lies with the great khal of dothraki (Drogo) and he also adds that they need to prepare to wage a war against them. But danny denies it saying that chances of victory is less, instead she thinks of a better option of marrying drogo.
 [[next|GN1]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="thanos" tags="" position="2490,447" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="10" name="HQ1" tags="" position="503,308" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="thanos" tags="" position="4070,1496" size="100,100">\&lt;&lt;set $thanos_tree = true&gt;&gt;
+\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
+\&lt;&lt;audio got_theme stop&gt;&gt;
+\&lt;&lt;audio harry_theme stop&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="10" name="HQ1" tags="" position="511,331" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
 \&lt;&lt;set $q1_attempted = true&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 {{{
@@ -365,9 +413,9 @@ int main()
 
 Did you figure it out?:
 &lt;&lt;textbox &quot;$HQ1ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HV1]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="HV1" tags="" position="383,485" size="100,100">&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="HV1" tags="" position="369,520" size="100,100">&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;\
 &lt;&lt;if $HQ1ans == &quot;ALohomORa&quot;&gt;&gt;
-	&lt;p class=&quot;para&quot;&gt;luckily you found the spell!! the spell is ALOHOMORA
+	&lt;p class=&quot;para&quot;&gt;luckilly you recalled the spell ALohomORa in time, 
 You have helped harry to unlock the [[door|HN2]].&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;if $harry_count == 0&gt;&gt;
@@ -405,9 +453,9 @@ You have helped harry to unlock the [[door|HN2]].&lt;/p&gt;
 	&lt;&lt;/script&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="12" name="HN2" tags="" position="165,597" size="100,100">&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;&lt;&lt;set $harry_count = ($harry_count + 1)%4&gt;&gt;\
+</tw-passagedata><tw-passagedata pid="12" name="HN2" tags="" position="190,588" size="100,100">&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;&lt;&lt;set $harry_count2 = ($harry_count2 + 1)%4&gt;&gt;\
 &lt;&lt;audio door play&gt;&gt;\
-&lt;&lt;timed 7s&gt;&gt;
+&lt;&lt;timed 7s t8n&gt;&gt;
 &lt;div class=&quot;slowfade para&quot;&gt;
 After finding the book, while harry was returning from the library, he hears footsteps in the corridor. Quickly he hides behind the door and waits curiously to know who it is. To his surprise, prof. snape walked into the restricted section. 
 
@@ -416,43 +464,58 @@ Trying not to get caught, harry rushes out with the book dropping his wand by mi
 In order to help harry to decode the information, solve [[this|HQ2]].&lt;/div&gt;
 &lt;&lt;/timed&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="13" name="HQ2" tags="" position="90,841" size="100,100">&lt;div class=&quot;para&quot;&gt;
+</tw-passagedata><tw-passagedata pid="13" name="HQ2" tags="" position="68,760" size="100,100">&lt;div class=&quot;para&quot;&gt;
 To decode the information, which will help to move forward Harry needs to put his intellectual thinking over the prism drawn on the torn page of the mumbling book. 
 
 The ratio of the Total surface area to the lateral surface area of this equilateral prism is 2:1.Find the ratio of the prism to the side of its base.
 
 Curious to move forward?? Answer this to get a hint. 
+Type Answer Here:
 &lt;&lt;textbox &quot;$HQ2ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HV2]]&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="14" name="HV2" tags="" position="415,743" size="100,100">&lt;&lt;if $HQ2ans == &quot;3.464&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="14" name="HV2" tags="" position="350,754" size="100,100">&lt;&lt;if $HQ2ans == &quot;3.464&quot;&gt;&gt;
 	&lt;div class=&quot;para&quot;&gt;The book revealed that he has to find Hagrid to continue his journey.
 	[[Find Hagrid|HN3]]
 	&lt;/div&gt;
 &lt;&lt;else&gt;&gt;
-	&lt;p align=right&gt;&lt;img src=&quot;images/tryAgain.gif&quot; width=220; height=150;&gt;&lt;/p&gt;
-	&lt;&lt;if $harry_count == 0&gt;&gt;
+	&lt;&lt;if $harry_count2 == 0&gt;&gt;
 		&lt;p class=&quot;para&quot;&gt;&lt;&lt;print $text_array1[0]&gt;&gt;, [[Try again|HN2]]&lt;/p&gt;
-	&lt;&lt;elseif $harry_count == 1&gt;&gt;
+	&lt;&lt;elseif $harry_count2 == 1&gt;&gt;
 		&lt;p class=&quot;para&quot;&gt;&lt;&lt;print $text_array1[1]&gt;&gt;, [[Try again|HN2]]&lt;/p&gt;
-	&lt;&lt;elseif $harry_count == 2&gt;&gt;
+	&lt;&lt;elseif $harry_count2 == 2&gt;&gt;
 		&lt;p class=&quot;para&quot;&gt;&lt;&lt;print $text_array1[2]&gt;&gt;, [[Try again|HN2]]&lt;/p&gt;
-	&lt;&lt;elseif $harry_count == 3&gt;&gt;
+	&lt;&lt;elseif $harry_count2 == 3&gt;&gt;
 		&lt;p class=&quot;para&quot;&gt;&lt;&lt;print $text_array1[3]&gt;&gt;, [[Try again|HN2]]&lt;/p&gt;
 	&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="HN3" tags="" position="242,916" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="HN3" tags="" position="225,901" size="100,100">&lt;div class=&quot;para&quot;&gt;
 In search of hagrid, harry reaches his hut. Because of an emergency hagrid had to leave for Diagon Alley immediately. Harry questions hagrid about the book. Instead of clearing his query, hagrid gives a hint as to look into the backyard. 
 In order to find the mystery in the backyard, solve the [[following question|HQ3]].&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="16" name="HQ3" tags="" position="93,1052" size="100,100">&lt;div class=&quot;para&quot;&gt;Type your answer:
+</tw-passagedata><tw-passagedata pid="16" name="HQ3" tags="" position="96,1062" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Find the missing term in the following series:
+7, 26, 63, 124, ____, 342, 512
+
+
+Type your answer:
 &lt;&lt;textbox &quot;$HQ3ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HV3]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="HV3" tags="" position="373,1075" size="100,100">&lt;&lt;if $HQ3ans == &quot;&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="HV3" tags="" position="373,1075" size="100,100">&lt;&lt;if $HQ3ans == &quot;215&quot;&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;Cool! [[Move ahead|HN4]]&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;[[Try again!|HN3]]&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="HN4" tags="" position="493.3333333333333,1246" size="100,100">&lt;&lt;set $entered = false&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="HN4" tags="" position="536,1226" size="100,100">&lt;&lt;set $entered = false&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-In the backyard, harry finds three things in front of him
- [[Broom|broom]], [[Buck Beak|buck beak]], [[Flying Car|flying car]](ford Anglia)
-in order to continue the journey a quick decision has to be taken, choose anyone among the three to reach quidditch ground asap.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="broom" tags="" position="171,1365" size="100,100">&lt;div class=&quot;para&quot;&gt;
+In the backyard, harry finds three things in front of him Broom, Buck Beak, Flying Car(Ford Anglia)
+
+in order to continue the journey a quick decision has to be taken, choose anyone among the three to reach quidditch ground ASAP.
+
+&lt;&lt;timed 3s transition&gt;&gt;
+&lt;div class=&quot;para slowfade&quot;&gt;
+	But before that... Solve,
+	
+	Q: Harry and Hermione have to go for an interview to be selected in the quiz team which has vacancies for the selection of harry is 1/3 and for Hermione is 1/5. What is the probability that only one of them is selected?
+	Type your answer here:
+	&lt;&lt;textbox &quot;$HN4_Qans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HN4_QV]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="broom" tags="" position="214,1481" size="100,100">&lt;div class=&quot;para&quot;&gt;
 Hey! You have chosen the perfect flight for Harry!!
 
 On his broom, harry swiftly flies towards quidditch ground, only to find it completely empty. But he hears a voice!! In order to find what the voice is trying to convey, solve the following question
@@ -479,68 +542,63 @@ int main()
 }
 }}}
 
+Type Your Answer Here:
 &lt;&lt;textbox &quot;$bans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|b_v]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="buck beak" tags="" position="612.3333333333334,1405" size="100,100">&lt;&lt;if $entered&gt;&gt;
-	&lt;p class=&quot;para&quot;&gt;Last chance&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="buck beak" tags="" position="307.6666666666667,1660" size="100,100">\&lt;&lt;set $entered_buck_beak = true&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-You&#39;ve opted the most interesting and yet intense creature - Buckbeak!
-Inorder to unlock 
+	You&#39;ve opted the most interesting and yet intense creature – Buckbeak!
 
-// Question here
+But unfortunately Harry doesn’t know how to communicate with him. In order to help him do so solve a question
 
-&lt;&lt;textbox &quot;$bbans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|bb1_v]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="flying car" tags="" position="690,1081.3333333333333" size="100,100">&lt;div class=&quot;para&quot;&gt;
-Hey! You chose the fastest means for transport.in order to start the car, solve the following question.
+Q: There are 2 T-flip flops having clock frequency of 2Hz &amp; 3Hz respectively. At time t=0, output of both the flip flops changes from 0 to 1. What is the shortest time interval after which the output of both flip flops changes from 0 to 1 simultaneously?(Note: Eliminating the instance t=0)
+
+Type your answer:
+&lt;&lt;textbox &quot;$bbans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|BBV]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="flying car" tags="" position="951,1582" size="100,100">\&lt;&lt;set $entered_flying_car = true&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+Hey! You chose the fastest means for transport. In order to start the car, solve the following question.
 
 Q: The car shows the distance covered is 2310, in order to start the car, answer how to express 2310 as a product of 3 factors. 
 
 The moment you answer correctly the car starts it&#39;s journey!! 
 &lt;&lt;textbox &quot;$fc_ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|fc_v]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="fc_v" tags="" position="837,1364" size="100,100">&lt;&lt;if $fc_ans == &quot;41&quot;&gt;&gt;
-&lt;p class=&quot;para&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="fc_v" tags="" position="853,1902" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $fc_ans == &quot;41&quot;&gt;&gt;
 within few minutes harry entered Hogwarts, but the whomping willow caught hold of the car and the car got crushed. 
 
-When harry gained consciousness, he realised that he had made a wrong decision.  
-&lt;/p&gt;
-&lt;p class=&quot;para&quot;&gt;Use time turner, [[Go Back!|HN4]]&lt;/p&gt;
-&lt;&lt;else&gt;&gt;
-&lt;p class=&quot;para&quot;&gt;Darn it, the car won&#39;t start! [[Try Again!|flying car]]&lt;/p&gt;
-&lt;&lt;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="bb1_v" tags="" position="703,1566.6666666666667" size="100,100">&lt;&lt;set $entered = true&gt;&gt;
-&lt;&lt;if $bbans == &quot;1&quot;&gt;&gt;
-&lt;p class=&quot;para&quot;&gt;But unfortunately Harry does&#39;nt know how to communicate with him. In order to help him do so solve [[this question|bb_q]]
-&lt;&lt;else&gt;&gt;
-Freeze
-&lt;&lt;timed 10s transition&gt;&gt;
-	[[Try again|buck beak]]
-&lt;&lt;/timed&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="bb_n" tags="" position="408,1397.6666666666667" size="100,100">&lt;div class=&quot;para&quot;&gt;Across the blue seas and huge mountains, after a swift flight Buckbeak gave an abrupt pause and landed suddenly making Harry fall.
-By the time he realized what happened Buckbeak had vanished. 
-Quickly rush back and choose one of the other [[means|HN4]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="bb_q" tags="" position="506.3333333333333,1595.6666666666667" size="100,100">// Question here
+When harry gained consciousness, he realised that he had made a wrong decision.
 
-&lt;p class=&quot;para&quot;&gt;Type answer here:&lt;/p&gt;
-&lt;&lt;textbox &quot;$bb_qans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|bb_v]]&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="bb_v" tags="" position="327.6666666666667,1552" size="100,100">&lt;&lt;if $bb_qans = &quot;1&quot;&gt;&gt;&lt;p class=&quot;para&quot;&gt;
-[[Go Back|bb_n]]&lt;/p&gt;
+Quickly, [[Go Back!|Decision]]
 &lt;&lt;else&gt;&gt;
-&lt;p class=&quot;para&quot;&gt;[[Try again|bb_q]]&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="b_v" tags="" position="56,1595" size="100,100">[[crossWord|CW]]</tw-passagedata><tw-passagedata pid="28" name="GN1" tags="" position="1395,586" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+Darn it, the car won&#39;t start! [[Try Again!|flying car]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="b_v" tags="" position="43,1685" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $bans == &quot;10 4 1 6 2&quot; or $bans == &quot;10,4,1,6,2&quot; or $bans == &quot;10, 4, 1, 6&quot;&gt;&gt;
+	&lt;&lt;if $entered_danny_tree and $entered_thanos_tree&gt;&gt;
+		voice suggested him to [[follow the spiders.|HN5]]
+	&lt;&lt;else&gt;&gt;
+		voice suggested him to [[follow the spiders.|changeOfChar]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Try again|broom]]
+&lt;&lt;/if&gt;&gt;
+
+	</tw-passagedata><tw-passagedata pid="24" name="GN1" tags="" position="5319,2260" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;Dany leaves Essos and travels with the Dothraki being the new Khalisi. Though she was new to the tradition and culture, understanding dothraki was tougher. In order to help her learn Dothraki solve the [[next question|GQ1]].
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="29" name="GQ1" tags="" position="1275,710" size="100,100">&lt;div class=&quot;para&quot;&gt;Either you win or die !!!! To move and win, know that Dany had to cover a long distance of 700 mile. 
+</tw-passagedata><tw-passagedata pid="25" name="GQ1" tags="" position="5032,2424" size="100,100">&lt;div class=&quot;para&quot;&gt;Either you win or die !!!! To move and win, know that Dany had to cover a long distance of 700 mile. 
 Starting from 100th mile to 800th mile stone. 
 To have a glimpse of her  height . You need to find out how many whole no. Between 100 and 800 contains 2?
 
 &lt;&lt;textbox &quot;$GQ1ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|GV1]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="30" name="GV1" tags="" position="1498,708" size="100,100">&lt;&lt;if $GQ1ans == &quot;214&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="26" name="GV1" tags="" position="5476,2525" size="100,100">&lt;&lt;if $GQ1ans == &quot;214&quot;&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;You&#39;re right! [[continue|GN2]]&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;[[Try Again|GN1]]&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="GN2" tags="" position="1422,830" size="100,100">&lt;div class=&quot;para&quot;&gt;After learning Dothraki , Dany discusses the issue with Drogo and seeks help.                                           
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="GN2" tags="" position="5177.666666666667,2525" size="100,100">&lt;div class=&quot;para&quot;&gt;After learning Dothraki , Dany discusses the issue with Drogo and seeks help.                                           
 He tells the source of information lies in Westros and as per Dothraki tradition, they are forbidden to cross the narrow sea and hence he never went in search of it. 
 But he promised dany that he would sail across the narrow sea for her. Meanwhile they decide to sail across the narrow sea, but lacked resources. So she decided to trade few ships. In order to get the deal, solve the  [[question|GQ2]].&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="32" name="GQ2" tags="" position="1290,937" size="100,100">&lt;div class=&quot;para&quot;&gt;
+</tw-passagedata><tw-passagedata pid="28" name="GQ2" tags="" position="5043,2740" size="100,100">&lt;div class=&quot;para&quot;&gt;
 Only Special Ships can be traded. Ships are numbered from 11 to 99 (both inclusive)
 Read the code and figure which ship can be traded. If Multiple answers are possible you need to find any one of them.
 {{{
@@ -573,7 +631,7 @@ int main()
 
 Think you know the answer:
 &lt;&lt;textbox &quot;$GQ2ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|GV2]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="GV2" tags="" position="1528.6666666666667,966" size="100,100">\&lt;&lt;set $arr = [&quot;19&quot;,&quot;29&quot;,&quot;39&quot;,&quot;49&quot;,&quot;59&quot;,&quot;69&quot;,&quot;79&quot;,&quot;89&quot;,&quot;99&quot;]&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="GV2" tags="" position="5290,2682" size="100,100">\&lt;&lt;set $arr = [&quot;19&quot;,&quot;29&quot;,&quot;39&quot;,&quot;49&quot;,&quot;59&quot;,&quot;69&quot;,&quot;79&quot;,&quot;89&quot;,&quot;99&quot;]&gt;&gt;
 \&lt;&lt;for _i = 0; _i &lt; 9; _i++&gt;&gt;
 	\&lt;&lt;if $GQ2ans == $arr[_i]&gt;&gt;
 		\&lt;&lt;break&gt;&gt;
@@ -585,7 +643,7 @@ Think you know the answer:
 &lt;&lt;else&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;Yes This Ship can be traded You can go further [[now|GN3]]&lt;/p&gt;
 	&lt;&lt;set _i = 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="GN3" tags="" position="1297,1082" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="GN3" tags="" position="5188,2905" size="100,100">&lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $blood_rider_1 and $blood_rider_2 and $blood_rider_3&gt;&gt;
 Meanwhile the Lannisters get the information about this development and they decide to weaken Dany’s strength they banish Drogo and take him as hostage. Disheartened by this act, Dany is in ambiguous state. 
 So she decides to send three blood riders in search of Drogo.  It’s a quick decision time, choose the better blood rider for her.
@@ -594,15 +652,15 @@ In light of recent events dany is furious! She won&#39;t let this slide...
 Now she has to choose from the reamaining blood riders
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $blood_rider_1&gt;&gt; [[Blood Rider 1|BR1_Q]], &lt;&lt;/if&gt;&gt; &lt;&lt;if $blood_rider_2&gt;&gt;[[Blood Rider 2|BR2_Q]], &lt;&lt;/if&gt;&gt; &lt;&lt;if $blood_rider_3&gt;&gt; [[Blood Rider 3|BR3_Q]]&lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="BR1_V" tags="" position="1068,1264.0000000000002" size="100,100">&lt;&lt;if $BR1_Qans == &quot;20&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="BR1_V" tags="" position="4659,3236" size="100,100">&lt;&lt;if $BR1_Qans == &quot;20&quot;&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;Oops! this blood rider lost his life for a Lannister soldier, May his soul rest in peace... [[Choose another blood rider|GN3]]&lt;/p&gt;
 	&lt;&lt;else&gt;&gt;
 		&lt;p class=&quot;para&quot;&gt;[[Try again!|BR1_Q]]&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="BR1_Q" tags="" position="1020.3333333333333,1102" size="100,100">\&lt;&lt;set $blood_rider_1 = false&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="BR1_Q" tags="" position="4644,2830" size="100,100">\&lt;&lt;set $blood_rider_1 = false&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;The blood riders are curious enough to search for Drogo, they hassle with the weapon master to acquire the axe at the point where the master solds the 30% axe at the profit of 50% and 90% hard rods at the profit of 10%.The average profit percent of the master selling the weapon , if it sells only these two kinds of things:is?
 
 &lt;&lt;textbox &quot;$BR1_Qans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|BR1_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt; </tw-passagedata><tw-passagedata pid="37" name="BR2_Q" tags="" position="1402.3333333333335,1224.9999999999998" size="100,100">\&lt;&lt;set $blood_rider_2 = false&gt;&gt;
+&lt;/div&gt; </tw-passagedata><tw-passagedata pid="33" name="BR2_Q" tags="" position="5367.333333333333,2948.3333333333335" size="100,100">\&lt;&lt;set $blood_rider_2 = false&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 This blood rider goes to Red Waste. After two days Dany receives a raven from Red Waste. To know this information solve the question.
 
@@ -611,14 +669,45 @@ It&#39;s not easy to get the information brought by Raven!!! You need coins to d
 
 Type Answer here:
 &lt;&lt;textbox &quot;$BR2_Qans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|BR2_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="BR3_Q" tags="" position="1682.0000000000002,1218" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="BR2_V" tags="" position="1455.666666666667,1361.6666666666663" size="100,100">\&lt;&lt;set $BR2_Qans to $BR2_Qans.toLowerCase()&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="BR3_Q" tags="" position="5586,2890" size="100,100">&lt;div class=&quot;para&quot;&gt;
+The blood rider returns with the information. To know that solve the question. 
+
+To know the information brought by the blood rider read the code and for the given 2 numbers find the relation between them. Predict the “val” returned by this code.
+{{{
+#include &lt;stdio.h&gt;
+int fun(int n1, int n2);
+int main()
+{
+   int n,val;
+   printf(&quot;Enter Your Number\n&quot;);
+   scanf(&quot;%d&quot;, &amp;n);
+   val=fun(36,48);
+   if(n==val)
+   	  printf(&quot;Information\nCity of Qarth is crucial for your conquest, conquer it!!!&quot;);
+   else
+   	  printf(&quot;Wrong Input\n&quot;);
+   return 0;
+}
+
+int fun(int n1, int n2)
+{
+    if (n2 != 0)
+       return fun(n2, n1%n2);
+    else 
+       return n1;
+}
+}}}
+
+Type your answer:
+&lt;&lt;textbox &quot;$BR3_Qans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|BR3_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="BR2_V" tags="" position="5407,3142" size="100,100">\&lt;&lt;set $BR2_Qans to $BR2_Qans.toLowerCase()&gt;&gt;
 &lt;&lt;if $BR2_Qans == &quot;2.4cm&quot; or $BR2_Qans == &quot;2.4 cm&quot;&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;Correct! [[Move Forward|BR2_N2]]&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;[[Try Again!|BR2_Q]]&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="BR2_N2" tags="" position="1439.0000000000002,1499.9999999999995" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="BR2_N2" tags="" position="5344,3280" size="100,100">&lt;div class=&quot;para&quot;&gt;
 Raven spoke about the Land of Nowhere. Dany decides to go there alone. Reaching there she gets a strange vision of Drogo being held captive. Soon she realises that it was a trap from the Lannisters. In order to get her out of the Land of Nowhere solve the [[question|BR2_Q2]].
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="BR2_Q2" tags="" position="1327.3333333333335,1663.333333333333" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="BR2_Q2" tags="" position="5148,3327" size="100,100">&lt;div class=&quot;para&quot;&gt;
 In order to escape from the traps laid by Lannisters she needs to predict the trap in advance.
 Help her in prediction… Read the code below and predict the 10th number in the series.
 {{{
@@ -644,7 +733,7 @@ int main()
 }}}
 
 &lt;&lt;textbox &quot;$BR2_Q2ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|BR2_Q2_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="BR2_Q2_V" tags="" position="1168.9999999999995,1393.3333333333328" size="100,100">&lt;&lt;if $BR2_Q2ans == &quot;34&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="BR2_Q2_V" tags="" position="5038,3171" size="100,100">&lt;&lt;if $BR2_Q2ans == &quot;34&quot;&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;
 	Hard luck!! You took more time to solve so she remains there forever. &lt;/p&gt;
 	&lt;h1 id=&quot;warn_text1&quot; class=&quot;heading&quot;&gt;Wait Here For 5 minutes!&lt;/h1&gt;
@@ -667,7 +756,635 @@ int main()
 	&lt;&lt;/script&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;[[Try Again!|BR2_Q2]]&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata></tw-storydata></div>
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="BR3_V" tags="" position="5545,3125" size="100,100">&lt;&lt;if $BR3_Qans == &quot;12&quot;&gt;&gt;
+	City of Qarth is crucial for your conquest, [[conquer it!!!|GOT_S_1]]
+&lt;&lt;else&gt;&gt;
+	[[Try again!|BR3_Q]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="GOT_S_1" tags="" position="5696,3298.6666666666665" size="100,100">&lt;span class=&quot;heading&quot;&gt;End Of Stage 1&lt;/span&gt;
+&lt;div class=&quot;para&quot;&gt;
+Congratulations! You&#39;ve succesfully completed stage one...
+Before you proceed [[Submit Status|https://goo.gl/forms/laCaKUTnr6rsvD6o2]]
+
+&lt;&lt;timed 10s t8n&gt;&gt;
+Enter the code that you got after status submission:
+&lt;&lt;textbox &quot;$S1ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|S1_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="S1_V" tags="" position="5486.666666666667,3501" size="100,100">&lt;div class=&quot;para&quot;&gt;&lt;&lt;if $S1ans == &quot;DRACARYS&quot;&gt;&gt;
+	You&#39;re response is recorded, [[Move Ahead|GN4]]
+&lt;&lt;else&gt;&gt;
+	Please submit status to move ahead [[Go Back|GOT_S_1]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="GN4" tags="" position="4935.333333333333,3459.3333333333335" size="100,100">&lt;div class=&quot;para&quot;&gt;
+The blood rider informs about the city of qarth. In order to move forward, conquering this city is very essential. So dany decides to go to qarth. As they stand in front of the entrance of the city the volvox of Qarth denies to let her in. In order to convince him and break a deal solve the [[next question|GQ4]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="43" name="GQ4" tags="" position="4952,3683" size="100,100">&lt;div class=&quot;para&quot;&gt;
+In order to convince Volvox you need to say a 7 letter word which fetches correct output According to the code
+
+{{{
+#include &lt;stdio.h&gt; 
+#include &lt;string.h&gt;
+
+void isfun(char str[]) 
+{ 
+	int l = 0; 
+	int h = strlen(str) - 1; 
+
+	while (h &gt; l) 
+	{ 
+		if (str[l++] != str[h--]) 
+		{ 
+			printf(&quot;%s is Not the correct Input&quot;, str); 
+			return; 
+		} 
+	} 
+	printf(&quot;%s is the correct input... You can now Enter the City&quot;, str); 
+} 
+
+int main() 
+{ 
+	char ch[7];
+	scanf(&quot;%s&quot;,ch);
+	isfun(ch);
+	return 0; 
+}
+}}}
+
+Type your answer:
+&lt;&lt;textbox &quot;$GQ4ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|GQ4_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="44" name="GQ4_V" tags="" position="5159.666666666667,3609" size="100,100">\&lt;&lt;set $GQ4ans = $GQ4ans.toLowerCase()&gt;&gt;
+\&lt;&lt;set _rstr = &quot;&quot;&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $GQ4ans.length == 7&gt;&gt;
+	&lt;&lt;for _i = 6; _i &gt;= 0; _i--&gt;&gt;
+		&lt;&lt;set _rstr += $GQ4ans[_i]&gt;&gt;
+	&lt;&lt;/for&gt;&gt;
+	&lt;&lt;if $GQ4ans == _rstr&gt;&gt;
+		You&#39;re Right! [[Move ahead!|GN5]]
+	&lt;&lt;else&gt;&gt;
+		Awww too bad! [[Go Back!|GN4]]
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+	Awww too bad! [[Go Back!|GN4]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="GN5" tags="" position="5197,3807" size="100,100">\&lt;&lt;set $door_1 = false&gt;&gt;
+\&lt;&lt;set $door_2 = false&gt;&gt;
+\&lt;&lt;set $door_3 = false&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+Even though Volvox was a good host he had other intensions towards dany. When she got to  know about this it was too late as she was already stuck inside the house of undying. 
+
+Luckily danny finds 3 doors in front of her, only you know that two of the doors are gaurded by warlocks keeping one of the doors ungaurded but which of the two is arbitrary and changes regularly.
+
+In order to get her out of this trap it&#39;s up to you to choose any one of the three doors....
+
+if in case you make a wrong decision the warlocks won&#39;t hesitate to kill the khaleesi... if danny dies she will respawn a node back!
+
+Take a leap of faith...
+[[DOOR 1|door1]]   [[DOOR 2|door2]]   [[DOOR 3|door3]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="46" name="GN6" tags="" position="4414.666666666666,4351.333333333334" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if not $attempted_gn6&gt;&gt;
+Hurry!!!! You have less time to save her. Solve this question to do so.
+&lt;&lt;/if&gt;&gt;
+Q: You need your 4 male friends and 5 female friends who can find her in 10 days. But your 6 male opponents and 6 female opponents can do the same job in 7 days. In how many days 2 males and 7 females 
+Complete the same job working together? 
+(note: don&#39;t add yourself as one of them while solving the question)
+
+Type your answer:
+&lt;&lt;textbox &quot;$GN6ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|GN6_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="47" name="HN4_QV" tags="" position="566,1424" size="100,100">\&lt;&lt;set $HN4_Qans = $HN4_Qans.toLowerCase()&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;&lt;&lt;if $HN4_Qans == &quot;0.4&quot; or $HN4_Qans == &quot;2/5&quot; or $HN4_Qans == &quot;40%&quot; or $HN4_Qans == &quot;40 percent&quot; or $HN4_Qans == &quot;40 percentage&quot;&gt;&gt;
+	Your Smart!!!
+	Now it&#39;s decision time... Choose from 
+	[[Broom|broom]], [[Flying Car|flying car]] or [[Buck Beak|buck beak]]
+	to reach the Quidditch ground....
+&lt;&lt;else&gt;&gt;
+	&lt;&lt;if $harry_count3 == 0&gt;&gt;
+		&lt;p class=&quot;para&quot;&gt;&lt;&lt;print $text_array1[0]&gt;&gt;, [[Try again|HN4]]&lt;/p&gt;
+	&lt;&lt;elseif $harry_count3 == 1&gt;&gt;
+		&lt;p class=&quot;para&quot;&gt;&lt;&lt;print $text_array1[1]&gt;&gt;, [[Try again|HN4]]&lt;/p&gt;
+	&lt;&lt;elseif $harry_count3 == 2&gt;&gt;
+		&lt;p class=&quot;para&quot;&gt;&lt;&lt;print $text_array1[2]&gt;&gt;, [[Try again|HN4]]&lt;/p&gt;
+	&lt;&lt;elseif $harry_count3 == 3&gt;&gt;
+		&lt;p class=&quot;para&quot;&gt;&lt;&lt;print $text_array1[3]&gt;&gt;, [[Try again|HN4]]&lt;/p&gt;
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="Decision" tags="" position="640,1679" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Choose: [[Broom|broom]]
+&lt;&lt;if not $entered_flying_car&gt;&gt;
+		[[Flying Car|flying car]]
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not $entered_buck_beak&gt;&gt;
+		[[Buck Beak|buck beak]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="BBV" tags="" position="480,1836" size="100,100">\&lt;&lt;set $bbans = $bbans.toLowerCase()&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $bbans == &quot;2&quot; or $bbans == &quot;2s&quot; or $bbans == &quot;2 seconds&quot; or $bbans == &quot;2 sec&quot;&gt;&gt;
+	Across the blue seas and huge mountains, after a swift flight Buckbeak gave an abrupt pause and landed suddenly, making Harry fall.
+By the time he realized what happened Buckbeak had &lt;span class=&quot;bb_vanish&quot;&gt;vanished.&lt;/span&gt;
+[[Go Back!|Decision]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Try again|buck beak]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;
+	
+
+</tw-passagedata><tw-passagedata pid="50" name="changeOfChar" tags="" position="220,1860" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Do You Think You Are On The Right Path? Would You Like To Switch Characters?
+
+[[Yes!|Change of Character]] or [[No!|HN5]]
+
+&lt;span class=&quot;important_info&quot;&gt;Think for a while...&lt;/span&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="Change of Character" tags="" position="1251,2390" size="100,100">\&lt;&lt;set $harry_count = -1&gt;&gt;
+\&lt;&lt;set $harry_count2 = -1&gt;&gt;
+\&lt;&lt;set $harry_count3 = -1&gt;&gt;
+\&lt;&lt;set $q1_attempted = false&gt;&gt;
+\&lt;&lt;set $q2_attempted = false&gt;&gt;
+\&lt;&lt;set $entered_flying_car = false&gt;&gt;
+\&lt;&lt;set $entered_buck_beak = false&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+Hmm You Wanna Switch... OK then
+You can go with [[Daenerys Targaryen|danny]], [[Thanos|thanos]] or you can again choose [[Harry Potter|harry]].
+
+&lt;span class=&quot;important_info&quot;&gt;Note: If you Select Harry Again You Will need to play the harry potter sequence again&lt;/span&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Insufficiency" tags="" position="1331.3333333333335,3482.6666666666665" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Choose:
+&lt;&lt;if not $harry_tree&gt;&gt;
+	[[Harry Potter|harry]]
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not $danny_tree&gt;&gt;
+	[[Daenerys Targaryen|danny]]
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if&gt;&gt;
+	[[Thanos|thanos]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="HN5" tags="" position="40,2049" size="100,100">&lt;div class=&quot;para&quot;&gt;
+As Harry followed the clutter of spiders, he had a vision of someone picking up his wand. 
+To find who it is, solve the question.
+
+{{{
+#include&lt;stdio.h&gt;
+int main()
+{
+	int n,i,s1,f=1;
+	s1=0;
+	printf(“Enter an integer:”);
+	scanf(“%d”,&amp;n);
+	if(n&lt;0)
+		printf(“error”);
+	else
+	{
+		for(i=1;i&lt;=n;i++)
+		{
+			f *= i;
+			s1 += i;
+		}
+		if(s1==55 &amp;&amp; f==362800)
+			printf(“Malfoy”);
+		else
+			printf(“incorrect answer”);
+	}
+return 0;  
+} 
+
+Type Answer Here:
+&lt;&lt;textbox &quot;$HQ5ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HQ5_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+}}}
+</tw-passagedata><tw-passagedata pid="54" name="HQ5_V" tags="" position="325,2098" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $HQ5ans == &quot;10&quot;&gt;&gt;
+	You are right! [[Continue|HARRY_S_1]]
+&lt;&lt;else&gt;&gt;
+	[[Try Again!|HN5]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="HARRY_S_1" tags="" position="66,2221" size="100,100">&lt;span class=&quot;heading&quot;&gt;End Of Harry Potter Stage 1&lt;/span&gt;
+&lt;div class=&quot;para&quot;&gt;
+Congratulations! You&#39;ve succesfully completed stage one...
+Before you proceed [[Submit Status|https://goo.gl/forms/idTaiLOd1wE92ID63]]
+
+&lt;&lt;timed 10s t8n&gt;&gt;
+Enter the code that you got after status submission:
+&lt;&lt;textbox &quot;$HS1ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HS1_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="HS1_V" tags="" position="295,2311" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $HS1ans == &quot;MUGGLES&quot;&gt;&gt;
+	[[Continue|HN6]]
+&lt;&lt;else&gt;&gt;
+	Please submit status [[Go Back!|HARRY_S_1]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="HN6" tags="" position="131,2432.3333333333335" size="100,100">&lt;div class=&quot;para&quot;&gt;
+By the end of this, Harry knows that Malfoy has his wand and he confronts Malfoy about the same. 
+Malfoy agrees to return the wand on one condition that Harry has to win over him in a game of chess. In order to defeat Malfoy solve the following [[question.|HQ6]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="58" name="HQ6" tags="" position="10,2607.3333333333335" size="100,100">&lt;div class=&quot;para&quot;&gt;
+If &quot;hat&quot; is encoded as 10111101, encoding  &quot;Potter&quot; and &quot;Hagrid&quot; in the above fashion and performing an operation &#39;F&#39; on the encoded results of the two words, a final answer of 0000110001 is obtained. Find the final answer if &quot;Weasley&quot; and &quot;Granger&quot; are the inputs
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;images/harry_digital.png&quot; width=120 height=100&gt;&lt;/p&gt;
+
+Type your answer:
+&lt;&lt;textbox &quot;$HQ6ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HV6_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="59" name="HV6_V" tags="" position="270,2590.6666666666665" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $HQ6ans == &quot;0000011100&quot;&gt;&gt;
+	Correct! [[continue|HN7]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Go Back|HN6]]
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="60" name="HN7" tags="" position="133.33333333333331,2728.9999999999995" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Meanwhile Prof. Snape arrives and confronts them as what mischief were they upto.
+As usual Malfoy slipped from the situation through an excuse. Snape gives a furious look towards Harry and drags him to the principle Dumbeldore&#39;s office.
+
+a)[[Take usual way|usual_way]]    b)[[Teleportation|teleport]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="61" name="usual_way" tags="" position="88.33333333333331,2880.6666666666665" size="100,100">&lt;div class=&quot;para&quot;&gt;
+So Usual Way Ah? You have 2 choices here....
+
+either you wait for 5 minutes and solve a single question or solve 3 relatively easier questions to reach the destination...
+it&#39;s your call...
+
+[[Wait For 5 Minutes|freeze]] OR [[Solve a Wave of 3 Questions|HN7a]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="62" name="teleport" tags="" position="775,3405.666666666666" size="100,100">&lt;div class=&quot;para&quot;&gt;
+To reach the next destination, solve the following question:
+
+Find the value of n which satisfies the following code:
+{{{
+#include&lt;stdio.h&gt;
+int main()
+{
+	int t1=0,t2=1,nextTerm=0,n,sum=232;
+	int i=0,sum1=0;
+	printf(“Enter a positive number”);
+	scanf(“%d”,&amp;n);
+	printf(“%d%d”,&amp;t1,&amp;t2);
+	sum1=t1+t2;
+	nextTerm=t1+t2;
+	sum1+=nextTerm;
+	while(i&lt;=n)
+	{
+		printf(“%d”,nextTerm);
+		sum1+=nextTerm;
+		t1=t2;
+		t2=nextTerm;
+		nextTerm=t1+t2;
+	}
+	if(sum1==sum)
+		printf(“The time required for teleportation is %d”);
+	else 
+		printf(“incorrect answer”);
+	return 0;
+}
+}}}
+
+Type your answer:
+&lt;&lt;textbox &quot;$atelans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|atel_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="63" name="freeze" tags="" position="83.33333333333334,3044" size="100,100">&lt;div class=&quot;para&quot;&gt;
+	\&lt;span id=&quot;wait_text&quot; class=&quot;slowfade heading&quot;&gt;Wait For 5 Minutes!&lt;/span&gt;
+	\&lt;p id=&quot;timer_uw&quot;&gt;&lt;/p&gt;
+	\&lt;&lt;timed 20s t8n&gt;&gt;
+	\&lt;p class=&quot;slowfade para&quot;&gt;[[phww That took ages! move ahead|HN7aw]]&lt;/p&gt;
+	\&lt;&lt;replace #wait_text&gt;&gt;You&#39;re Wait is Over&lt;&lt;/replace&gt;&gt;
+	\&lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;
+&lt;&lt;silently&gt;&gt;
+&lt;&lt;script&gt;&gt;
+	var seconds = 20;
+	var timer_uw = setInterval(function(){
+ 	seconds--;
+  	$(&quot;#timer_uw&quot;).text(seconds + &quot; seconds left!&quot;);
+  	if(seconds &lt;= 0)
+  	{
+		clearInterval(timer_uw);
+  		$(&quot;#timer_uw&quot;).removeAttr(&quot;id&quot;);
+  	}
+	}, 1000)	
+&lt;&lt;/script&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="64" name="HN7a" tags="" position="376.6666666666667,3068.9999999999995" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Solve the following questions to move forward:
+
+Q1: A small number of cards has been lost from a complete pack. If I deal among four people, three cars remain. If I deal among three people, two remain and if I deal among five people, two cars remain. How many cards are there?
+
+Type your answer:
+&lt;&lt;textbox &quot;$HN7aans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HN7a_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="HN7aw" tags="" position="1.6666666666666607,3200.6666666666665" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Dumbledore was busy in taking class of new bunch of students enrolled in Hogwarts!! He decided to distribute wands whose sum is an infinite geometric series of value 162 and the sum of its first N wands is 160. The inverse of its common ratio is an integer, then how many values of the common ratio R are possible?
+
+
+&lt;span class=&quot;important_info&quot;&gt;If you get this wrong you&#39;ll again be frozen for 5 minutes.&lt;/span&gt;
+Type your answer:
+&lt;&lt;textbox &quot;$HN7awans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HN7aw_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="66" name="HN7aw_V" tags="" position="211.66666666666669,3222.3333333333335" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $HN7awans == &quot;5&quot;&gt;&gt;
+	Correct [[Move Ahead!|HN8]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Try Again!|freeze]]
+&lt;&lt;/if&gt;&gt;
+	</tw-passagedata><tw-passagedata pid="67" name="HN8" tags="" position="45,3520.6666666666665" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Harry is visiting Dumbledore’s office for the first time. He is quite amused by the ambience. Snape requests Dumbledore to consider the issue seriously and he wants Harry to serve detention.
+
+But Dumbledore doesn’t pay much attention and  askes  Harry to be careful  from now on.
+
+He orders Harry get back to the coldroun.
+But while returning Dumbledore slips a note in Harry&#39;s hand. In order to know what the note said solve the [[question.|HQ8]] 
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="68" name="HN7a_V" tags="" position="506.6666666666667,3210.6666666666665" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $HN7aans == &quot;47&quot;&gt;&gt;
+	Correct [[next question|HN7b]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Go Back!|HN7a]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="HN7b" tags="" position="365,3263.9999999999995" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Q2: A and B walk around a circular track. They start at 10 a.m. from the same point in the opposite directions. A and B walk at a speed of 2 rounds per hour and 3 rounds per hour respectively. How many times shall they cross each other before 11.30 a.m.?
+
+Think you got this one?
+&lt;&lt;textbox &quot;$HN7bans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HN7b_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="HN7b_V" tags="" position="508.33333333333337,3388.9999999999995" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $HN7bans == &quot;7&quot;&gt;&gt;
+	Correct [[next question|HN7c]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Go Back!|HN7b]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="HN7c" tags="" position="358.3333333333333,3408.9999999999995" size="100,100">&lt;div class=&quot;para&quot;&gt;
+	In a 100 m race, A can beat B  by 25m and B can beat C by 4 m. In the same race, by how many meters can A beat C?
+	
+	Type Answer Here:
+	&lt;&lt;textbox &quot;$HN7cans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HN7c_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="HN7c_V" tags="" position="398.33333333333337,3638.9999999999995" size="100,100">\&lt;&lt;set $HN7cans = $HN7cans.toLowerCase()&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $HN7cans == &quot;28&quot; or $HN7cans == &quot;28m&quot; or $HN7cans == &quot;28 meters&quot; or $HN7cans == &quot;28 meter&quot;&gt;&gt;
+	Correct [[next question|HN8]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Go Back!|HN7c]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="atel_V" tags="" position="788.3333333333334,3600.666666666666" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $HN7aans == &quot;12&quot;&gt;&gt;
+	Correct [[Move Ahead|HN8]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Go Back!|teleport]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="HQ8" tags="" position="5,3707.333333333333" size="100,100">&lt;div class=&quot;para&quot;&gt;
+{{{
+#include&lt;stdio.h&gt;
+int isA(int num)
+{
+	int temp=num;
+	int rem,sum,b;
+	b=0;
+	sum=0;
+	while(temp!=0)
+	{
+		rem=temp%10;
+		sum=sum+(rem*rem*rem);
+		temp/=10;
+		b++;
+	}
+	if(sum==num&amp;&amp;b==3)
+		return 1;
+	else
+		return 0;
+}
+
+int main()
+{
+	int number;
+	printf(“Enter a 3-digit number”);
+	scanf(“%d”,&amp;number);
+	if(isA(number))
+		printf(“follow the phoenix”);
+	else
+		printf(“incorrect input”);
+	return 0;
+}
+}}}
+
+Type your answer:
+&lt;&lt;textbox &quot;$HQ8ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HQ8_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="HQ8_V" tags="" position="205.00000000000003,3812.333333333333" size="100,100">&lt;div class=&quot;para&quot;&gt;
+495 does not work
+&lt;&lt;if $HQ8ans == &quot;153&quot; or $HQ8ans == &quot;370&quot; or $HQ8ans == &quot;371&quot; or $HQ8ans == &quot;495&quot;&gt;&gt;
+	Correct [[Follow the phoenix|HN9]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Go back!|HN8]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="HN9" tags="" position="315,3960.6666666666665" size="100,100">&lt;div class=&quot;para&quot;&gt;
+The note said to follow the phoenix that is Fawkes, Dumbledore&#39;s bird. Harry gets his invisible cloak on and sneaks inside Dumbledore&#39;s office and looks for Fawkes. 
+As soon as he gets a glance of the bird, It catches fire and the ashes combine in air to form a figure of a scroll. This scroll is the last nail on the coffin. In order to get the information solve [[this question.|HQ9]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="77" name="HQ9" tags="" position="113.33333333333337,4043.999999999999" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Two identical blocks of coffin were kept secretly. When the first block is melted and recast into spheres of equal radii R then 14cc of iron was left, but when the second coffin was melted and recast into sphere each of equal radii 2R, then 36cc of iron was left. 
+The volume of the coffins and all the spheres are integer. What is the volume in cc of each of larger spheres of radius ‘2R’?
+
+Type your answer:
+&lt;&lt;textbox &quot;$HQ9ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HQ9_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="78" name="HQ9_V" tags="" position="393.33333333333337,4152.333333333332" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $HQ9ans == &quot;176&quot;&gt;&gt;
+	&lt;&lt;if $danny_tree and $thanos_tree&gt;&gt;
+	Hurray You Got all the information!!!
+	&lt;&lt;timed 3s transition&gt;&gt;
+	&lt;span class=&quot;slowfade&quot;&gt;[[next|Climax]]&lt;/span&gt;
+	&lt;&lt;/timed&gt;&gt;
+	&lt;&lt;else&gt;&gt;
+	Congratulations!!! You have helped harry potter in his journey!!
+	&lt;&lt;timed 3s transition&gt;&gt;
+	But...
+	&lt;&lt;/timed&gt;&gt;
+	&lt;&lt;timed 1s t8n&gt;&gt;
+	He has only obtained partial information, you require [[more help|Insufficiency]]
+</tw-passagedata><tw-passagedata pid="79" name="Climax" tags="" position="241.66666666666669,4300.666666666665" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="80" name="door1" tags="" position="4923.333333333332,3888.666666666667" size="100,100">\&lt;&lt;set $door_1 = true&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+	[[Open|FATE]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="door2" tags="" position="5096.666666666667,3976.3333333333335" size="100,100">\&lt;&lt;set $door_2 = true&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+	[[Open|FATE]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="door3" tags="" position="5326.666666666666,4086.9999999999995" size="100,100">\&lt;&lt;set $door_3 = true&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+	[[Open|FATE]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="FATE" tags="" position="4613.333333333333,4225.333333333333" size="100,100">\&lt;&lt;set _randChoice = random(1, 3)&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+	&lt;&lt;print _randChoice&gt;&gt;
+	&lt;&lt;if $door_1 and _randChoice == 1&gt;&gt;
+		Leap of faith: Bravo!! you are extremely lucky.
+		Though you believed in your faith, it’s not easy this time. To know what happened solve this [[question|GN6]]
+	&lt;&lt;elseif $door_2 and _randChoice == 2&gt;&gt;
+		Leap of faith: Bravo!! you are extremely lucky.
+		Though you believed in your faith, it’s not easy this time. To know what happened solve this [[question|GN6]]
+	&lt;&lt;elseif $door_3 and _randChoice == 3&gt;&gt;
+		Leap of faith: Bravo!! you are extremely lucky.
+		Though you believed in your faith, it’s not easy this time. To know what happened solve this [[question|GN6]]
+	&lt;&lt;else&gt;&gt;
+		Wrong Door!!! danny dies...
+		Quickly [[Revive her|GN4]]
+	&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="84" name="GN6_V" tags="" position="4614.666666666666,4473.000000000001" size="100,100">\&lt;&lt;set $attempted_gn6 = true&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $GN6ans == &quot;1&quot;&gt;&gt;
+	She gets [[out|GN7]] of house of undying.
+&lt;&lt;else&gt;&gt;
+	Wrong [[Try again!|GN6]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="GN7" tags="" position="4294.666666666666,4544.666666666668" size="100,100">&lt;div class=&quot;para&quot;&gt;
+As Dany was returning from the house of undying she meets two warriors. It’s a quick decision time, help Dany choose a subordinate for her.
+
+[[Jorah Mormont|jorah]]: no army but experienced 
+[[Daario Naharis|daario]]: Has army but no experience
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="86" name="jorah" tags="" position="4079.6666666666665,4629.666666666668" size="100,100">\&lt;&lt;set $wentwithJorah = true&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+To unlock this character solve a question:
+
+Q: Jeren Mormont has two children. Each of them has only one child. Lyanna is Jeor&#39;s niece. Jeor is the son of Jeren and Jorah is the only grandson of Jeren. If Maege is Jeor&#39;s only sibling, who is her nephew?
+
+Type your answer:
+&lt;&lt;textbox &quot;$jorah_ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|jorah_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="daario" tags="" position="4576.333333333333,4639.666666666668" size="100,100">\&lt;&lt;set $wentwithDaario = true&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+NO ANS FOUND
+Daario is good choice, as he has army of strength. 
+But to defend anyone in time is the matter of excellence, as all of us have only 24 hrs in a day. 
+But did you ever wonder!!! That how many times minute - hand of a clock coincides with hour-hand in 12 hrs?
+
+Type your answer:
+&lt;&lt;textbox &quot;$daario_ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|daario_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="jorah_V" tags="" position="3913.0000000000005,4763.000000000002" size="100,100">\&lt;&lt;set $jorah_ans = $jorah_ans.toLowerCase()&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $jorah_ans == &quot;jorah&quot;&gt;&gt;
+	Your answer is right! You&#39;ve unlocked [[Jorah|GN7_ja]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Try Again!|jorah]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="GN7_ja" tags="" position="3756.333333333333,4941.333333333334" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Jorah informs Dany about the dragon eggs and he convinces her to travel to the city of Meereen in search of them. 
+In order to find the eggs solve this [[question|GQ7_ja]]:
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="GQ7_ja" tags="" position="3699.6666666666656,5141.333333333334" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Dragon’s Eggs are magical Eggs. To find the Egg you need to Read the code and state the number which gives the correct output.
+{{{
+#include&lt;stdio.h&gt;
+int isfun(int n) 
+{ 
+	int sum = 0; 
+
+	while (n &gt; 0 || sum &gt; 9) 
+	{ 
+		if (n == 0) 
+		{ 
+			n = sum; 
+			sum = 0; 
+		} 
+		sum += n % 10; 
+		n /= 10; 
+	}
+	return sum; 
+} 
+int main() 
+{ 
+	int input,val;
+	scanf(&quot;%d&quot;,&amp;input);
+    val=isfun(input);
+	if(val==1) 
+		printf(“You can find the Egg&quot;); 
+	else
+		printf(&quot;Incorrect\n&quot;); 
+	return 0; 
+}
+
+}}}
+
+Type your answer:
+&lt;&lt;textbox &quot;$GQ7_jaans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|GQ7_ja_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="GQ7_ja_V" tags="" position="3999.6666666666656,5231.333333333333" size="100,100">\&lt;&lt;set _iflag = false&gt;&gt;
+&lt;div clas=&quot;para&quot;&gt;
+&lt;&lt;for _i=$GQ7_jaans; _i &gt;= 10; _i = _i-9&gt;&gt;
+	&lt;&lt;if _i == 10&gt;&gt;
+		&lt;&lt;set _iflag = true&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;/for&gt;&gt;
+&lt;&lt;if _iflag&gt;&gt;
+	&lt;&lt;if $wentwithDaario&gt;&gt;
+		You&#39;re really smart... [[Move Ahead|GQ7_jb]]
+	&lt;&lt;else&gt;&gt;
+		You&#39;re Right!
+		&lt;&lt;timed 3s t8n&gt;&gt;
+		At last mother of dragons finds the eggs but this isn’t enough to defeat Lannisters and conquer Westros. Hence she needs an army and decides to meet [[Daario|daario]] 
+		&lt;&lt;/timed&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Try again!|GQ7_ja]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;
+		</tw-passagedata><tw-passagedata pid="92" name="GQ7_jb" tags="" position="3636.3333333333326,5424.666666666667" size="100,100"></tw-passagedata><tw-passagedata pid="93" name="daario_V" tags="" position="4634.666666666666,4826.333333333335" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $daario_ans == &quot;1&quot;&gt;&gt;
+	Correct! [[MOve Forward!|daario_a]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Go Back!|daario]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="daario_a" tags="" position="4504.666666666667,4979.666666666667" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Daario advises Dany to conquer the city of Yunkai. In order to do so solve:
+
+{{{
+To Conquer Yunkai Soldiers need to Attack in a perfect sequence.
+Ranks of different kinds of soldiers are given. Read the code and Find the Perfect sequence.
+#include &lt;stdio.h&gt; 
+#include &lt;math.h&gt; 
+void fun1(int arr[], int n) 
+{ 
+int i, num1, j; 
+for (i = 1; i &lt; n; i++) 
+{ 
+	num1 = arr[i]; 
+	j = i-1;
+	while (j &gt;= 0 &amp;&amp; arr[j] &gt; num1) 
+	{ 
+		arr[j+1] = arr[j]; 
+		j = j-1; 
+	} 
+	arr[j+1] = num1; 
+} 
+} 
+
+int main() 
+{ 
+	int input[10];
+	int i,flag=1;
+	int arr[] = {21,31,76,45,86,94,24,75,46,78}; 
+	int n = sizeof(arr)/sizeof(arr[0]); 
+	for(i=0;i&lt;10;i++)
+		scanf(&quot;%d&quot;,&amp;input[i]);
+
+	fun1(arr, n); 
+
+	for(i=0;i&lt;10;i++)
+	{
+		if(arr[i]!=input[i])
+			{
+				flag=0;
+				break;
+			}
+
+	}
+	if(flag)
+		printf(&quot;Correct Sequence The City of Yunkai can be conqurred&quot;);
+	else
+		printf(&quot;incorrect&quot;);
+
+	return 0; 
+}
+}}}
+
+
+Type your answer:
+&lt;&lt;textbox &quot;$daario_aans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|daario_a_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+
+
+</tw-passagedata><tw-passagedata pid="95" name="daario_a_V" tags="" position="4666.333333333333,5111.333333333334" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $daario_aans == &quot;21 24 31 45 46 75 76 78 86 94&quot;&gt;&gt;
+	Correct [[next|daario_b]]
+&lt;&lt;else&gt;&gt;
+	Wrong [[Try again|daario_a]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="daario_b" tags="" position="4523,5236.333333333334" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(/^(?:(?:uncaught\s+(?:exception:\s+)?)?error:\s+)+/i,"")+".":": unknown error."),"object"===("undefined"==typeof n?"undefined":_typeof(n))&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}();!function(){function e(e,t){var a=String(e);switch(t){case"start":return a&&r.test(a)?a.replace(r,""):a;case"end":return a&&n.test(a)?a.replace(n,""):a;default:throw new Error('_trimFrom called with incorrect where parameter value: "'+t+'"')}}function t(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n="undefined"==typeof t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var r=/^[\s\u00A0\uFEFF][\s\u00A0\uFEFF]*/,n=/[\s\u00A0\uFEFF][\s\u00A0\uFEFF]*$/;Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(t===n||t!==t&&n!==n)return!0}return!1}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(e,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(e,10);return i<=a?n:t(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(e,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(e,10);return i<=a?n:n+t(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return e(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return e(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return e(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return e(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r,r<0&&(r=0)),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n,n<0&&(n=e-1)),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if(null==e||"object"!==("undefined"==typeof e?"undefined":_typeof(e))||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){var r=0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1));return e[r]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function e(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var t=Array.from(this);if(0===arguments.length)return t;var r=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),n=r.length;if(0===n)return t;for(var a=Array.prototype.indexOf,i=Array.prototype.push,o=0;o<n;++o){var e=r[o];a.call(t,e)===-1&&i.call(t,e)}return t}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;(r=e.call(this,t,r))!==-1;)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=Array.prototype.splice,a=Array.prototype.concat.apply([],arguments),i=[],o=0,s=a.length;o<s;++o)for(var u=a[o],l=0;(l=t.call(this,u,l))!==-1;)r.apply(i,n.call(this,l,1));return i}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.reduce.call(this,function(e,t){return e.concat(Array.isArray(t)?t.flatten():t)},[])}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do a.push(n.call(this,_random(0,i--),1)[0]);while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function e(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var t=arguments.length;if(0===t)return this.length>>>0;for(var r=Array.prototype.indexOf,n=Array.prototype.push,a=0;a<t;++a){var e=arguments[a];r.call(this,e)===-1&&n.call(this,e)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return this[t]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do o=_random(0,i);while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function e(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var t=arguments.length;if(0===t)return this.length>>>0;for(var r=Array.prototype.indexOf,n=Array.prototype.unshift,a=0;a<t;++a){var e=arguments[a];r.call(this,e)===-1&&n.call(this,e)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function e(t,r,n){var e=Number(t);return Number.isNaN(e)?NaN:e.clamp(r,n)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||!function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch("undefined"==typeof i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return String.prototype.indexOf.apply(this,arguments)!==-1}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;(n=t.call(this,e,n))!==-1;)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n,a<0&&(a=0)):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return"undefined"!=typeof r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return n===-1?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return n===-1?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Windows:t||e.includes("iemobile"),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null;return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),r=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),n=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),a=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}();return Object.freeze({audio:e,fileAPI:t,geolocation:r,mutationObserver:n,performance:a})}(),_ref3=function(){function e(t){if("object"!==("undefined"==typeof t?"undefined":_typeof(t))||null==t)return t;if("function"==typeof t.clone)return t.clone(!0);if(t.nodeType&&"function"==typeof t.cloneNode)return t.cloneNode(!0);var r=void 0;return Array.isArray(t)?r=[]:t instanceof Date?r=new Date(t.getTime()):t instanceof Map?(r=new Map,t.forEach(function(t,n){r.set(n,e(t))})):t instanceof RegExp?r=new RegExp(t):t instanceof Set?(r=new Set,t.forEach(function(t){r.add(e(t))})):r=Object.create(Object.getPrototypeOf(t)),Object.keys(t).forEach(function(n){return r[n]=e(t[n])}),r}function t(e){for(var t=document.createDocumentFragment(),r=document.createElement("p"),n=void 0;null!==(n=e.firstChild);){if(n.nodeType===Node.ELEMENT_NODE){var a=n.nodeName.toUpperCase();switch(a){case"BR":if(null!==n.nextSibling&&n.nextSibling.nodeType===Node.ELEMENT_NODE&&"BR"===n.nextSibling.nodeName.toUpperCase()){e.removeChild(n.nextSibling),e.removeChild(n),t.appendChild(r),r=document.createElement("p");continue}if(!r.hasChildNodes()){e.removeChild(n);continue}break;case"ADDRESS":case"ARTICLE":case"ASIDE":case"BLOCKQUOTE":case"CENTER":case"DIV":case"DL":case"FIGURE":case"FOOTER":case"FORM":case"H1":case"H2":case"H3":case"H4":case"H5":case"H6":case"HEADER":case"HR":case"MAIN":case"NAV":case"OL":case"P":case"PRE":case"SECTION":case"TABLE":case"UL":r.hasChildNodes()&&(t.appendChild(r),r=document.createElement("p")),t.appendChild(n);continue}}r.appendChild(n)}r.hasChildNodes()&&t.appendChild(r),e.appendChild(t)}function r(){try{return document.activeElement||null}catch(e){return null}}function n(e,t,r){var n="object"===("undefined"==typeof e?"undefined":_typeof(e))?e:document.getElementById(e);if(null==n)return null;var a=Array.isArray(t)?t:[t];jQuery(n).empty();for(var i=0,o=a.length;i<o;++i)if(Story.has(a[i]))return new Wikifier(n,Story.get(a[i]).processText().trim()),n;if(null!=r){var s=String(r).trim();""!==s&&new Wikifier(n,s)}return n}function a(e,t,r){return jQuery(document.createElement("span")).addClass("error").attr("title",r).text(L10n.get("errorTitle")+": "+(t||"unknown error")).appendTo(e),!1}function i(e,t){var r=i;switch("undefined"==typeof e?"undefined":_typeof(e)){case"number":if(Number.isNaN(e))return t;break;case"object":if(null===e)return t;if(Array.isArray(e))return e.map(function(e){return r(e,t)}).join(", ");if(e instanceof Set)return[].concat(_toConsumableArray(e)).map(function(e){return r(e,t)}).join(", ");if(e instanceof Map){var n=[].concat(_toConsumableArray(e)).map(function(e){return r(e[0],t)+" ⇒ "+r(e[1],t)}).join("; ");return"( "+n+" )"}return e instanceof Date?e.toLocaleString():"function"==typeof e.toString?e.toString():Object.prototype.toString.call(e);case"function":case"undefined":return t}return String(e)}return Object.freeze(Object.defineProperties({},{clone:{value:e},convertBreaks:{value:t},safeActiveElement:{value:r},setPageElement:{value:n},throwError:{value:a},toStringOrDefault:{value:i}}))}(),clone=_ref3.clone,convertBreaks=_ref3.convertBreaks,safeActiveElement=_ref3.safeActiveElement,setPageElement=_ref3.setPageElement,throwError=_ref3.throwError,toStringOrDefault=_ref3.toStringOrDefault;!function(){function e(e){13!==e.which&&32!==e.which||(e.preventDefault(),jQuery(safeActiveElement()||this).trigger("click"))}function t(e){return function(){var t=jQuery(this);t.is("[aria-pressed]")&&t.attr("aria-pressed","true"===t.attr("aria-pressed")?"false":"true"),e.apply(this,arguments)}}function r(e){return t(function(){jQuery(this).off(".aria-clickable").removeAttr("tabindex aria-controls aria-pressed").not("a,button").removeAttr("role").end().filter("button").prop("disabled",!0),e.apply(this,arguments)})}jQuery.fn.extend({ariaClick:function(n,a){if(0===this.length||0===arguments.length)return this;var i=n,o=a;return null==o&&(o=i,i=undefined),i=jQuery.extend({namespace:undefined,one:!1,selector:undefined,data:undefined,controls:undefined,pressed:undefined,label:undefined},i),"string"!=typeof i.namespace?i.namespace="":"."!==i.namespace[0]&&(i.namespace="."+i.namespace),"boolean"==typeof i.pressed&&(i.pressed=i.pressed?"true":"false"),this.filter("button").prop("type","button"),this.not("a,button").attr("role","button"),this.attr("tabindex",0),null!=i.controls&&this.attr("aria-controls",i.controls),null!=i.pressed&&this.attr("aria-pressed",i.pressed),null!=i.label&&this.attr({"aria-label":i.label,title:i.label}),this.not("button").on("keypress.aria-clickable"+i.namespace,i.selector,e),this.on("click.aria-clickable"+i.namespace,i.selector,i.data,i.one?r(o):t(o)),this}})}(),function(){jQuery.extend({wikiWithOptions:function(e){for(var t=arguments.length,r=Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];if(0!==r.length){var a=document.createDocumentFragment();r.forEach(function(t){return new Wikifier(a,t,e)});var i=[].concat(_toConsumableArray(a.querySelectorAll(".error"))).map(function(e){return e.textContent.replace(/^(?:(?:Uncaught\s+)?Error:\s+)+/,"")});if(i.length>0)throw new Error(i.join("; "))}},wiki:function(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];this.wikiWithOptions.apply(this,[undefined].concat(t))}}),jQuery.fn.extend({wikiWithOptions:function(e){for(var t=arguments.length,r=Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];if(0===this.length||0===r.length)return this;var a=document.createDocumentFragment();return r.forEach(function(t){return new Wikifier(a,t,e)}),this.append(a),this},wiki:function(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return this.wikiWithOptions.apply(this,[undefined].concat(t))}})}();var Util=function(){function e(e){return Object.freeze(Object.assign(Object.create(null),e))}function t(e){return Object.prototype.toString.call(e).slice(8,-1)}function r(e){var t=void 0;switch("undefined"==typeof e?"undefined":_typeof(e)){case"number":t=e;break;case"string":t=Number(e);break;default:return!1}return!Number.isNaN(t)&&Number.isFinite(t)}function n(e){return"boolean"==typeof e||"string"==typeof e&&("true"===e||"false"===e)}function a(e){return String(e).trim().replace(/[^\w\s\u2013\u2014-]+/g,"").replace(/[_\s\u2013\u2014-]+/g,"-").toLocaleLowerCase()}function i(e){if(null==e)return"";var t=String(e);return t&&h.test(t)?t.replace(p,function(e){return g[e]}):t}function o(e){if(null==e)return"";var t=String(e);return t&&y.test(t)?t.replace(m,function(e){return v[e.toLowerCase()]}):t}function s(e,t){var r=String(e),n=Math.trunc(t),a=r.charCodeAt(n);if(Number.isNaN(a))return{char:"",start:-1,end:-1};var i={char:r.charAt(n),start:n,end:n};if(a<55296||a>57343)return i;if(a>=55296&&a<=56319){var o=n+1;if(o>=r.length)return i;var s=r.charCodeAt(o);return s<56320||s>57343?i:(i.char=i.char+r.charAt(o),i.end=o,i)}if(0===n)return i;var u=n-1,l=r.charCodeAt(u);return l<55296||l>56319?i:(i.char=r.charAt(u)+i.char,i.start=u,i)}function u(){return(Has.performance?performance:Date).now()}function l(e){var t=/^([+-]?(?:\d*\.)?\d+)([Mm]?[Ss])$/,r=t.exec(String(e));if(null===r)throw new SyntaxError('invalid time value syntax: "'+e+'"');var n=Number(r[1]);if(/^[Ss]$/.test(r[2])&&(n*=1e3),Number.isNaN(n)||!Number.isFinite(n))throw new RangeError('invalid time value: "'+e+'"');return n}function c(e){if("number"!=typeof e||Number.isNaN(e)||!Number.isFinite(e)){var t=void 0;switch("undefined"==typeof e?"undefined":_typeof(e)){case"string":t='"'+e+'"';break;case"number":t=String(e);break;default:t=Object.prototype.toString.call(e)}throw new Error("invalid milliseconds: "+t)}return e+"ms"}function d(e){if(!e.includes("-"))switch(e){case"bgcolor":return"backgroundColor";case"float":return"cssFloat";default:return e}var t="-ms-"===e.slice(0,4)?e.slice(1):e;return t.split("-").map(function(e,t){return 0===t?e:e.toUpperFirst()}).join("")}function f(e){var t=document.createElement("a"),r=Object.create(null);t.href=e,t.search&&t.search.replace(/^\?/,"").splitOrEmpty(/(?:&(?:amp;)?|;)/).forEach(function(e){var t=e.split("="),n=_slicedToArray(t,2),a=n[0],i=n[1];r[a]=i});var n=t.host&&"/"!==t.pathname[0]?"/"+t.pathname:t.pathname;return{href:t.href,protocol:t.protocol,host:t.host,hostname:t.hostname,port:t.port,path:""+n+t.search,pathname:n,query:t.search,search:t.search,queries:r,searches:r,hash:t.hash}}var p=/[&<>"'`]/g,h=new RegExp(p.source),g=Object.freeze({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"}),m=/&(?:amp|#38|#x26|lt|#60|#x3c|gt|#62|#x3e|quot|#34|#x22|apos|#39|#x27|#96|#x60);/gi,y=new RegExp(m.source,"i"),v=Object.freeze({"&amp;":"&","&#38;":"&","&#x26;":"&","&lt;":"<","&#60;":"<","&#x3c;":"<","&gt;":">","&#62;":">","&#x3e;":">","&quot;":'"',"&#34;":'"',"&#x22;":'"',"&apos;":"'","&#39;":"'","&#x27;":"'","&#96;":"`","&#x60;":"`"});return Object.freeze(Object.defineProperties({},{toEnum:{value:e},toStringTag:{value:t},isNumeric:{value:r},isBoolean:{value:n},slugify:{value:a},escape:{value:i},unescape:{value:o},charAndPosAt:{value:s},fromCssTime:{value:l},toCssTime:{value:c},fromCssProperty:{value:d},parseUrl:{value:f},now:{value:u},random:{value:Math.random},entityEncode:{value:i},entityDecode:{value:o},evalExpression:{value:function(){return Scripting.evalJavaScript.apply(Scripting,arguments)}},evalStatements:{value:function(){return Scripting.evalJavaScript.apply(Scripting,arguments)}}}))}(),SimpleAudio=function(){function e(){return g}function t(e){g=!!e,l("mute",g)}function r(){return p}function n(e){p=Math.clamp(e,.2,5),l("rate",p)}function a(){return h}function i(e){h=Math.clamp(e,0,1),l("volume",h)}function o(){l("stop")}function s(e,t){if("function"!=typeof t)throw new Error("callback parameter must be a function");f.set(e,t)}function u(e){f.delete(e)}function l(e,t){f.forEach(function(r){return r(e,t)})}function c(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return new(Function.prototype.bind.apply(m,[null].concat(t)))}function d(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return new(Function.prototype.bind.apply(y,[null].concat(t)))}var f=new Map,p=1,h=1,g=!1,m=function(){function e(t){if(_classCallCheck(this,e),Array.isArray(t))this._create(t);else{if(!(t instanceof e))throw new Error("sources parameter must be an array of either URLs or source objects");this._copy(t)}}return _createClass(e,[{key:"_create",value:function(t){if(!Array.isArray(t)||0===t.length)throw new Error("sources parameter must be an array of either URLs or source objects");var r=/^data:\s*audio\/([^;,]+)\s*[;,]/i,n=/\.([^.\/\\]+)$/,a=e.getType,i=[],o=document.createElement("audio");if(t.forEach(function(e){var t=null;switch("undefined"==typeof e?"undefined":_typeof(e)){case"string":var s=void 0;if("data:"===e.slice(0,5)){if(s=r.exec(e),null===s)throw new Error("source data URI missing media type")}else if(s=n.exec(Util.parseUrl(e).pathname),null===s)throw new Error("source URL missing file extension");var u=a(s[1]);null!==u&&(t={src:e,type:u});break;case"object":if(null===e)throw new Error("source object cannot be null");if(!e.hasOwnProperty("src"))throw new Error('source object missing required "src" property');
