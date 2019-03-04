@@ -126,14 +126,14 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
   	color: #444;
 }
 
-/*#ui-bar {
+#ui-bar {
    display: none; 
 }
 
 #story {
 	margin-left: 5em;
 }
-*/
+
 
 .macro-textbox {
   	height: 25px;
@@ -556,10 +556,10 @@ Type your answer:
 &lt;&lt;textbox &quot;$HQ3ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HV3]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="HV3" tags="autosave" position="373,1075" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
 &lt;&lt;if $HQ3ans == &quot;215&quot;&gt;&gt;
-	&lt;p class=&quot;para&quot;&gt;Cool! [[Move ahead|HN4]]&lt;/p&gt;
+	&lt;p class=&quot;para&quot;&gt;Cool! [[Move ahead|HARRY_S_1]]&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;[[Try again!|HN3]]&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="HN4" tags="autosave" position="616,1122" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="HN4" tags="autosave" position="577.6666666666666,1117" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
 \&lt;&lt;set $entered = false&gt;&gt;
 \&lt;&lt;set $harry_count3 = ($harry_count3 + 1)%4&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
@@ -1059,26 +1059,26 @@ Type Answer Here:
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="HQ5_V" tags="autosave" position="433,2106" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $HQ5ans == &quot;10&quot;&gt;&gt;
-	You are right! [[Continue|HARRY_S_1]]
+	You are right! [[Continue|HARRY_S_2]]
 &lt;&lt;else&gt;&gt;
 	[[Try Again!|HN5]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="HARRY_S_1" tags="autosave" position="66,2221" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
-&lt;span class=&quot;heading&quot;&gt;End Of Harry Potter Stage 1&lt;/span&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="HARRY_S_2" tags="autosave" position="87.66666666666667,2252.6666666666665" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
+&lt;span class=&quot;heading&quot;&gt;End Of Harry Potter Stage 2&lt;/span&gt;
 &lt;div class=&quot;para&quot;&gt;
-Congratulations! You&#39;ve succesfully completed stage one...
-Before you proceed [[Submit Status|https://goo.gl/forms/idTaiLOd1wE92lD63]]
+Congratulations! You&#39;ve succesfully completed stage two...
+Before you proceed [[Submit Status|https://goo.gl/forms/pRMSQ0ifw2m2uF113]]
 
-&lt;&lt;timed 10s t8n&gt;&gt;
+&lt;&lt;timed 5s t8n&gt;&gt;
 Enter the code that you got after status submission:
-&lt;&lt;textbox &quot;$HS1ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HS1_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;textbox &quot;$HS2ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HS2_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="HS1_V" tags="autosave" position="487,2307" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="HS2_V" tags="autosave" position="487,2307" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-&lt;&lt;if $HS1ans == &quot;MUGGLES&quot;&gt;&gt;
+&lt;&lt;if $HS2ans == &quot;MALFOY&quot;&gt;&gt;
 	[[Continue|HN6]]
 &lt;&lt;else&gt;&gt;
-	Please submit status [[Go Back!|HARRY_S_1]]
+	Please submit status [[Go Back!|HARRY_S_2]]
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="HN6" tags="autosave" position="215,2396" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
@@ -1309,7 +1309,7 @@ The volume of the coffins and all the spheres are integer. What is the volume in
 Type your answer:
 &lt;&lt;textbox &quot;$HQ9ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HQ9_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="78" name="HQ9_V" tags="autosave" position="418,4089" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="78" name="HQ9_V" tags="autosave" position="419.6666666666667,4094" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $HQ9ans == &quot;176&quot;&gt;&gt;
 	&lt;&lt;if $danny_tree and $thanos_tree&gt;&gt;
@@ -2416,6 +2416,23 @@ Type your answer:
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Try Again|NC6B2]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="197" name="HARRY_S_1" tags="" position="211.33333333333331,1253.3333333333333" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
+&lt;span class=&quot;heading&quot;&gt;End Of Harry Potter Stage 1&lt;/span&gt;
+&lt;div class=&quot;para&quot;&gt;
+Congratulations! You&#39;ve succesfully completed stage one...
+Before you proceed [[Submit Status|https://goo.gl/forms/zZiE3mvIqtSapFLI2]]
+
+&lt;&lt;timed 5s t8n&gt;&gt;
+Enter the code that you got after status submission:
+&lt;&lt;textbox &quot;$HS1ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HS1_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="198" name="HS1_V" tags="" position="433,1251" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
+&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $HS1ans == &quot;MUGGLES&quot;&gt;&gt;
+	[[Continue|HN4]]
+&lt;&lt;else&gt;&gt;
+	Please submit status [[Go Back!|HARRY_S_1]]
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
