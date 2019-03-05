@@ -126,15 +126,13 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
   	color: #444;
 }
 
-/*#ui-bar {
+#ui-bar {
    display: none; 
 }
 
 #story {
 	margin-left: 5em;
 }
-*/
-
 
 .macro-textbox {
   	height: 25px;
@@ -242,6 +240,7 @@ a:hover {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/*Config.saves.autosave = "autosave";
 
 Config.saves.autoload = "prompt";
@@ -288,16 +287,16 @@ Config.saves.autoload = "prompt";
 
 
 
-</script><tw-passagedata pid="1" name="Intro" tags="autosave" position="902,125" size="100,100">&lt;!--&lt;&lt;timed 0.3s&gt;&gt;&lt;&lt;audio typing volume 1 play&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+</script><tw-passagedata pid="1" name="Intro" tags="autosave" position="902,125" size="100,100">&lt;&lt;timed 0.3s&gt;&gt;&lt;&lt;audio typing volume 1 play&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;typed-speed58&quot;&gt;
 &lt;span class=&quot;heading&quot;&gt;Welcome cave-dweller!!&lt;/span&gt;\
 &lt;p class=&quot;para&quot;&gt;This is an online text based adventure game wherein you are required to make decisions and solve problems using your instincts and intellectual abilities to move forward and to reach the ultimate goal...
 
 So boost yourselves up, to embark on this exciting adventure!!! 
 Kick start your journey using your wits...&lt;/p&gt;\
-&lt;/div&gt;--&gt;
-&lt;div class=&quot;para&quot;&gt;don&#39;t freak out the typing has been commented for faster testing&lt;/div&gt;28s 
-&lt;span class=&quot;slowfade para&quot;&gt;&lt;&lt;timed 0.5s transition&gt;&gt;[[Lets Begin!|Q0]]&lt;&lt;/timed&gt;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="5900,4301" size="100,100">&lt;&lt;cacheaudio &quot;typing&quot; &quot;music/typing.wav&quot;&gt;&gt;
+&lt;/div&gt;
+&lt;span class=&quot;slowfade para&quot;&gt;&lt;&lt;timed 28s transition&gt;&gt;[[Lets Begin!|BAT]]&lt;&lt;/timed&gt;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="5901.666666666667,4200.999999999999" size="100,100">&lt;&lt;cacheaudio &quot;typing&quot; &quot;music/typing.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;harry_theme&quot; &quot;music/HarryTheme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;got_theme&quot; &quot;music/GotTheme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;thanos_theme&quot; &quot;music/ThanosTheme.mp3&quot;&gt;&gt;
@@ -337,28 +336,24 @@ Kick start your journey using your wits...&lt;/p&gt;\
 &lt;&lt;set $time_stone = false&gt;&gt;
 
 &lt;&lt;set $destroy_vision = false&gt;&gt;
-&lt;&lt;set $search_soul = false&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Q0" tags="autosave" position="748.6666666666666,124.00000000000001" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;set $search_soul = false&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Q0" tags="autosave" position="461,179" size="100,100">&lt;div class=&quot;para&quot;&gt;
 Before you start playing the &quot;actual game&quot;, lets see how witty you are...
 Solve these riddles and enter the multiverse of aMAZE...
 
-Q1:   
-&lt;&lt;textbox &quot;$Q1_ans&quot; &quot;&quot;&gt;&gt;
-
-Q2: You&#39;re lost, scared! and all alone, you&#39;re only hope of survival is to keep on moving, your&#39;e probably in &lt;&lt;textbox &quot;$Q2_ans&quot; &quot;&quot;&gt;&gt;
+Q1: You&#39;re lost, scared! and all alone, your only hope of survival is to keep on moving, your&#39;e probably in &lt;&lt;textbox &quot;$Q1_ans&quot; &quot;&quot;&gt;&gt;
 &lt;&lt;button [[Submit|Q0_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="Q0_V" tags="autosave" position="730,274" size="100,100">\&lt;&lt;set $Q1_ans = $Q1_ans.toLowerCase()&gt;&gt;
-&lt;&lt;if $Q1_ans == &quot;1&quot; and $Q2_ans == &quot;aMAZE&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="Q0_V" tags="autosave" position="730,274" size="100,100">&lt;&lt;if $Q1_ans == &quot;aMAZE&quot;&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;You are right! [[Enter the game|choice_node]]&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;[[Try again|Q0]]&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="5" name="choice_node" tags="autosave" position="902,299" size="100,100">&lt;span class=&quot;heading&quot;&gt;Congratulations!! You have entered the game.&lt;/span&gt;\
 &lt;div class=&quot;para&quot;&gt;
-You have three paths to move ahead; you can help either [[HARRY POTTER|harry]], [[DAENERYS TARGARYEN|danny]] or [[THANOS|thanos]] in their journey. A vast sea of challenges awaits them in their quest...
+With Alfreds time machine you can travel to 3 universes having the Protagonists [[HARRY POTTER|harry]], [[DAENERYS TARGARYEN|danny]] or [[THANOS|thanos]] Choose anyone of them to assist in your quest....
 
 Choose wisely tread carefully...
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="6" name="Terms and Conditions" tags="autosave" position="902,1" size="100,100">&lt;div class=&quot;para&quot;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="Terms and Conditions" tags="autosave" position="900,0" size="100,100">&lt;div class=&quot;para&quot;&gt;
 &lt;span class=&quot;heading&quot;&gt;Terms and Conditions: &lt;/span&gt;
 &lt;div style=&quot;padding-top: -0.5px; padding-bottom: -0.5px; padding-left: 12px; height: auto; width: auto; border-radius: 5px; color: #000; background: lightgray;&quot;&gt;&lt;p style=&quot;font-family: monospace; font-size: 16px;&quot; &gt;Please read this carefully, you will not see this page again in the future course of the game.&lt;/p&gt;&lt;/div&gt;
 &lt;span style=&quot;display:inline-block;&quot; class=&quot;dot&quot;&gt;&lt;/span&gt;&lt;b style=&quot;font-family: monospace;&quot;&gt; DISCLAIMER:&lt;/b&gt; This is a work of fiction. Names, characters, buisnesses, places, events, locales and incidents are either the products of the author&#39;s imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.
@@ -377,7 +372,7 @@ Choose wisely tread carefully...
 
 [[Accept and Continue|Intro]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="7" name="harry" tags="autosave" position="700.3333333333333,538.3333333333334" size="100,100">\&lt;&lt;set $harry_tree = true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="7" name="harry" tags="autosave" position="700,538" size="100,100">\&lt;&lt;set $harry_tree = true&gt;&gt;
 \&lt;&lt;audio got_theme stop&gt;&gt;
 \&lt;&lt;audio thanos_theme stop&gt;&gt;
 \&lt;&lt;audio harry_theme play loop&gt;&gt;&lt;&lt;set $harry_count = ($harry_count + 1)%7&gt;&gt;\
@@ -499,7 +494,7 @@ You have helped harry to unlock the [[door|HN2]].&lt;/p&gt;
 		\&lt;p class=&quot;slowfade para&quot;&gt;[[Try again|harry]]&lt;/p&gt;
 		\&lt;&lt;/timed&gt;&gt;
 		&lt;&lt;script&gt;&gt;
-		var seconds = 20;
+		var seconds = 300;
 		var timer = setInterval(function(){
  		seconds--;
   		$(&quot;#timer&quot;).text(seconds + &quot; seconds left!&quot;);
@@ -655,26 +650,26 @@ Darn it, the car won&#39;t start! [[Try Again!|flying car]]
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-	</tw-passagedata><tw-passagedata pid="24" name="GN1" tags="autosave" position="4373.333333333333,4505.333333333333" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+	</tw-passagedata><tw-passagedata pid="24" name="GN1" tags="autosave" position="4373,4491.666666666667" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;Dany leaves Essos and travels with the Dothraki being the new Khaleesi. Though she was new to the tradition and culture, understanding dothraki was tougher. In order to help her learn Dothraki solve the [[next question|GQ1]].
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="25" name="GQ1" tags="autosave" position="4159.666666666667,4622.666666666667" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="25" name="GQ1" tags="autosave" position="4159,4622" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;Either you win or die !!!! To move and win, know that Dany had to cover a long distance of 700 mile. 
 Starting from 100th mile to 800th mile stone. 
 To have a glimpse of her  height . You need to find out how many whole numbers between 100 and 800 contains 2?
 
 &lt;&lt;textbox &quot;$GQ1ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|GV1]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="26" name="GV1" tags="autosave" position="4567,4644.333333333333" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="26" name="GV1" tags="autosave" position="4567,4644" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;&lt;if $GQ1ans == &quot;214&quot;&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;You&#39;re right! [[continue|GN2]]&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;[[Try Again|GN1]]&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="GN2" tags="autosave" position="4315.666666666667,4732.666666666667" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="GN2" tags="autosave" position="4315,4732" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;After learning Dothraki , Dany discusses the issue with Drogo and seeks help.                                           
 He tells the source of information lies in Westeros and as per Dothraki tradition, they are forbidden to cross the narrow sea and hence he never went in search of it. 
 But he promised Dany that he would sail across the narrow sea for her. Meanwhile they decide to sail across the narrow sea, but lacked resources. So she decided to trade few ships. In order to get the deal, solve the  [[question|GQ2]].&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="28" name="GQ2" tags="autosave" position="4109,4831.666666666667" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="28" name="GQ2" tags="autosave" position="4109,4831" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 \&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 Only Special Ships can be traded. Ships are numbered from 11 to 99 (both inclusive)
@@ -709,7 +704,7 @@ int main()
 
 Think you know the answer?:
 &lt;&lt;textbox &quot;$GQ2ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|GV2]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="GV2" tags="autosave" position="4434.666666666667,4817.666666666667" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="GV2" tags="autosave" position="4434,4817" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 \&lt;&lt;set $arr = [&quot;19&quot;,&quot;29&quot;,&quot;39&quot;,&quot;49&quot;,&quot;59&quot;,&quot;69&quot;,&quot;79&quot;,&quot;89&quot;,&quot;99&quot;]&gt;&gt;
 \&lt;&lt;for _i = 0; _i &lt; 9; _i++&gt;&gt;
 	\&lt;&lt;if $GQ2ans == $arr[_i]&gt;&gt;
@@ -722,7 +717,7 @@ Think you know the answer?:
 &lt;&lt;else&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;Yes This Ship can be traded You can go further [[now|G_S_1]]&lt;/p&gt;
 	&lt;&lt;set _i = 0&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="GN3" tags="autosave" position="4250.666666666667,5079.333333333333" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="GN3" tags="autosave" position="4250,5079" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $blood_rider_1 and $blood_rider_2 and $blood_rider_3&gt;&gt;
 Meanwhile the Lannisters get the information about this development and they decide to weaken Dany’s strength they banish Drogo and take him as hostage. Disheartened by this act, Dany is in an ambiguous state. 
@@ -751,7 +746,8 @@ This blood rider goes to Red Waste. After two days Dany receives a raven from Re
 It&#39;s not easy to get the information brought by Raven!!! You need coins to decode it and the value of a coin varies directly to the square of its radius, when it&#39;s thickness is constant. The radius of a coin is 1.5cm and its value is Rs. 2. what  will be the radius of a coin if its value is Rs. 5?
 
 Type Answer here:
-&lt;&lt;textbox &quot;$BR2_Qans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|BR2_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;textbox &quot;$BR2_Qans&quot; &quot;&quot;&gt;&gt; cm 
+&lt;&lt;button [[Submit|BR2_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="BR3_Q" tags="autosave" position="4662,5234" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 \&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
@@ -787,7 +783,8 @@ Type your answer:
 &lt;&lt;textbox &quot;$BR3_Qans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|BR3_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="BR2_V" tags="autosave" position="4463,5478" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 \&lt;&lt;set $BR2_Qans to $BR2_Qans.toLowerCase()&gt;&gt;
-&lt;&lt;if $BR2_Qans == &quot;2.4cm&quot; or $BR2_Qans == &quot;2.4 cm&quot;&gt;&gt;
+\&lt;&lt;set $BR2_Qans = Number($BR2_Qans)&gt;&gt;
+&lt;&lt;if $BR2_Qans &gt;= 2.3 and $BR2_Qans &lt;= 2.4&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;Correct! [[Move Forward|BR2_N2]]&lt;/p&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;[[Try Again!|BR2_Q]]&lt;/p&gt;
@@ -821,7 +818,7 @@ int main()
 }}}
 
 &lt;&lt;textbox &quot;$BR2_Q2ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|BR2_Q2_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="BR2_Q2_V" tags="autosave" position="4146,5439" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="BR2_Q2_V" tags="autosave" position="4132.666666666667,5439" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;&lt;if $BR2_Q2ans == &quot;34&quot;&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;
 	Hard luck!! You took more time to solve, so she remains there forever. &lt;/p&gt;
@@ -868,7 +865,7 @@ Enter the code that you got after status submission:
 &lt;&lt;else&gt;&gt;
 	Please submit status to move ahead [[Go Back|G_S_2]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="GN4" tags="autosave" position="4032.6666666666665,5777.666666666666" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="GN4" tags="autosave" position="4032,5777" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 The blood rider informs about the city of Qarth. In order to move forward, conquering this city is very essential. So dany decides to go to Qarth. As they stand in front of the entrance of the city the volvox of Qarth denies to let her in. In order to convince him and break a deal solve the [[next question|GQ4]]
 &lt;/div&gt;
@@ -1173,7 +1170,7 @@ Type your answer:
 &lt;/div&gt;
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;script&gt;&gt;
-	var seconds = 20;
+	var seconds = 300;
 	var timer_uw = setInterval(function(){
  	seconds--;
   	$(&quot;#timer_uw&quot;).text(seconds + &quot; seconds left!&quot;);
@@ -1255,7 +1252,20 @@ Think you got this one?
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="atel_V" tags="autosave" position="716,3596" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $atelans == &quot;9&quot;&gt;&gt;
-	wait 144 sec
+	Wait for 144 seconds...
+	&lt;p id=&quot;#timerx&quot;&gt;&lt;/p&gt;
+	&lt;&lt;script&gt;&gt;
+		var seconds = 144;
+		var timerx = setInterval(function(){
+ 		seconds--;
+  		$(&quot;#timer&quot;).text(seconds + &quot; seconds left!&quot;);
+  			if(seconds &lt;= 0)
+  			{
+			clearInterval(timerx);
+  			$(&quot;#timerx&quot;).removeAttr(&quot;id&quot;);
+  			}
+		}, 1000)	
+	&lt;&lt;/script&gt;&gt;
 	Correct [[Move Ahead|HN8]]
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Go Back!|teleport]]
@@ -1318,11 +1328,12 @@ The volume of the coffins and all the spheres are integer. What is the volume in
 Type your answer:
 &lt;&lt;textbox &quot;$HQ9ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HQ9_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="78" name="HQ9_V" tags="autosave" position="419,4094" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="78" name="HQ9_V" tags="autosave" position="417,4114" size="100,100">\&lt;&lt;audio harry_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $HQ9ans == &quot;176&quot;&gt;&gt;
 	&lt;&lt;if $danny_tree and $thanos_tree&gt;&gt;
-		Hurray You Got all the information!!!
+		Congratulations!!! You have helped harry potter in his journey!!
+		Last bit of info needed to save gotham &quot;The Joker&#39;s&quot;
 		&lt;&lt;timed 3s transition&gt;&gt;
 			&lt;span class=&quot;slowfade&quot;&gt;[[next|Climax]]&lt;/span&gt;
 		&lt;&lt;/timed&gt;&gt;
@@ -1332,14 +1343,22 @@ Type your answer:
 		But...
 	&lt;&lt;/timed&gt;&gt;
 	&lt;&lt;timed 1s t8n&gt;&gt;
-		He has only obtained partial information, you require [[more help|Insufficiency]]
+		He has only obtained partial information that is &quot;The Joker&#39;s&quot;, you require [[more help|Insufficiency]]
+		&lt;span class=&quot;important_info&quot;&gt;Remember This!&lt;/span&gt;
 	&lt;&lt;/timed&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Try Again|HN9]]
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="79" name="Climax" tags="" position="301,4272" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="80" name="door1" tags="autosave" position="3964,6185" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="79" name="Climax" tags="" position="224,4383" size="100,100">&lt;div class=&quot;para&quot;&gt;
+Congratulations! You have found all the 3 information required to save gotham city. 
+
+Bring out meaning in that!!!!
+
+&lt;&lt;textbox &quot;$Cans&quot; &quot;&quot;&gt;&gt; 
+&lt;&lt;button [[Submit|CV]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="door1" tags="autosave" position="3964,6185" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 \&lt;&lt;set $door_1 = true&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 	[[Open|FATE]]
@@ -1393,7 +1412,7 @@ Q: Jeren Mormont has two children. Each of them has only one child. Lyanna is Je
 
 Type your answer:
 &lt;&lt;textbox &quot;$jorah_ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|jorah_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="daario" tags="autosave" position="4170.666666666667,7218" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="daario" tags="autosave" position="4170,7218" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 \&lt;&lt;set $wentwithDaario = true&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 Daario is a good choice, as he has army of strength. 
@@ -1410,11 +1429,11 @@ Type your answer:
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Try Again!|jorah]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="GN7_ja" tags="autosave" position="3582.6666666666665,7502" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="GN7_ja" tags="autosave" position="3582,7502" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 Jorah informs Dany about the dragon eggs and he convinces her to travel to the city of Meereen in search of them. 
 In order to find the eggs solve this [[question|GQ7_ja]]:
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="GQ7_ja" tags="autosave" position="3510.6666666666665,7734.666666666667" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="GQ7_ja" tags="autosave" position="3510,7734" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 Dragon’s Eggs are magical Eggs. To find the Egg you need to Read the code and state the number which gives the correct output.
 {{{
@@ -1467,7 +1486,7 @@ Type your answer:
 	&lt;&lt;else&gt;&gt;
 		&lt;span class=&quot;para&quot;&gt;You&#39;re Right!&lt;/span&gt;
 		&lt;&lt;timed 3s t8n&gt;&gt;
-	&lt;div class=&quot;para slowfade&quot;&gt;At last mother of dragons finds the eggs but this isn’t enough to defeat Lannisters and conquer Westros. Hence she needs an army and decides to meet [[Daario|daario]]
+	&lt;div class=&quot;para slowfade&quot;&gt;At last mother of dragons finds the eggs but this isn’t enough to defeat Lannisters and conquer Westeros. Hence she needs an army and decides to meet [[Daario|daario]]
 	&lt;/div&gt; 
 		&lt;&lt;/timed&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
@@ -1555,7 +1574,7 @@ Type your answer:
 		[[next|jorah]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-	Wrong [[Try again|daario_a]]
+	Wrong Seems you have not read the terms and conditions, provide the array with spaces like 1 2 3 4 [[Try again|daario_a]]
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="GQ8" tags="" position="3664,8041" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
@@ -1563,13 +1582,13 @@ Three leaders of the unsullied army are on the top of 3 towers, each tower havin
 Daenerys is supposed to give them some wine to convince them for the task.
 There are ladders to climb up and down the tower. Every time she climbs up or down the ladder, the amount of wine with her doubles.
 So dany takes some wine in a container. She climbs the 1st tower and gives some amount of her wine to the 1st leader. After coming down she climbs the second tower, gives some wine to the 2nd leader and comes down. Similarly she climbs the 3rd tower and after giving the 3rd leader some wine, the wine container becomes empty.
-If she has given equal amount of wine to all 3 leaders, what was the initial amount of wine in the container and what was the amount of wine she gave to each each leader?
+If she has given equal amount of wine to all 3 leaders, what was the initial amount of wine in the container and what was the amount of wine she gave to each each leader? (Express these two values in the form of a ratio)
 
 &lt;span class=&quot;important_info&quot;&gt;Keep the answer in ratio&lt;/span&gt;
 
 Numerator: &lt;&lt;textbox &quot;$NRans&quot; &quot;&quot;&gt;&gt;
 
-Denomenator: &lt;&lt;textbox &quot;$DRans&quot; &quot;&quot;&gt;&gt;
+Denominator: &lt;&lt;textbox &quot;$DRans&quot; &quot;&quot;&gt;&gt;
 
 &lt;&lt;button [[Submit|GQ8_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
@@ -1592,8 +1611,8 @@ So its quick decision time. Dany has three options
 3) [[Trade the Eggs|trade_eggs]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="p_decline" tags="" position="3482,8434" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-Find the area of the iron sheet required to prepare a cone 20 cm high with base radius 21cm. 
-
+Find the area(in cc) of the iron sheet required to prepare a cone 20 cm high with base radius 21cm. 
+(approximate to nearest 100th place)
 &lt;&lt;textbox &quot;$p_decans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|p_decans_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="wage_war" tags="" position="3784,8555" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
@@ -1621,17 +1640,19 @@ Type your answer:
 &lt;&lt;textbox &quot;$t_eggsans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|t_eggsans_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="p_decans_V" tags="" position="3494,8653" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-&lt;&lt;if $p_decans == 3300&gt;&gt;
+&lt;&lt;if $p_decans == &quot;3300&quot; or $p_decans == &quot;3298&quot;&gt;&gt;
 	Correct!&lt;&lt;timed 2s t8n&gt;&gt;
 	Drogo dies!. Dany is furious...[[Wage War|wage_war]]
 	&lt;&lt;/timed&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Try Again!|p_decline]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="w_wans_V" tags="" position="3703,8769" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="w_wans_V" tags="" position="3704.6666666666665,8759" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $w_wans == 766&gt;&gt;
 	You are really good with numbers!!! [[Move Forward!|GN10]]
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Go Back!|wage_war]]
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="GN10" tags="" position="3591,8909" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
@@ -1644,9 +1665,9 @@ Type your answer:
 &lt;/div&gt;
 
 
-</tw-passagedata><tw-passagedata pid="105" name="GQ10_V" tags="" position="3839,8879" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="105" name="GQ10_V" tags="" position="3829,8897.333333333334" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-&lt;&lt;if $GQ10ans == 1&gt;&gt;
+&lt;&lt;if $GQ10ans == &quot;HLPT&quot;&gt;&gt;
 	Good! [[Continue|GN11]]
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Go Back!|GN10]]
@@ -1821,7 +1842,7 @@ Type your answer:
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Go Back!|GN17]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="GN18" tags="" position="4137.333333333334,10778.666666666666" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="GN18" tags="" position="4137,10778" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 But it’s evident that the nightwalkers can’t be killed easily and Bran has two solutions to this problem. To know the strategy to win the war, solve [[this|GQ18]]
 &lt;/div&gt;
@@ -1845,7 +1866,7 @@ Type your answer:
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Go Back!|GN18]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="GN19" tags="" position="4150.333333333333,11040.333333333334" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="GN19" tags="" position="4150,11040" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 Acquire the dragon glass and valyrian steel by UNLOCKING the character below :
 
@@ -1879,7 +1900,7 @@ The whole of Westros army marches towards the wall , lead by Dany and Jon. The g
 The war has created a food scarcity. 
 Luckily there is a Food supplies reserve which can be used to feed the people. 
 Based on population of each kingdom, it is decided how much carts of food each kingdom gets. 
-The population and the number of food carts has to be an integer.
+The population and the number of food carts is approximated to nearest integer.
 The North has a population of 35000 and gets 374 carts. 
 The Riverlands has a population of 67000 and gets 518 carts.
 The Vale has a population of 52000 and gets 456 carts
@@ -1916,13 +1937,21 @@ Type your answer:
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $GQ21ans == &quot;17&quot;&gt;&gt;
 	&lt;&lt;if $harry_tree and $thanos_tree&gt;&gt;
-		Correct! Dany rushes to Gotham with the key.
+		Congratulations!!! You have helped dany in her journey!!
+		Last bit of info needed to save gotham &quot;is here!!!&quot;
+		Dany rushes to Gotham with the key.
  		[[Continue|Climax]]
 	&lt;&lt;else&gt;&gt;
-		Correct! But Dany realises she needs more [[help|Insufficiency]]
+			Congratulations!!! You have helped dany in her journey!!
+	&lt;&lt;timed 3s transition&gt;&gt;
+		But...
+	&lt;&lt;/timed&gt;&gt;
+	&lt;&lt;timed 1s t8n&gt;&gt;
+		She has only obtained partial information that is &quot;is here!!!&quot;, you require [[more help|Insufficiency]]
+		&lt;span class=&quot;important_info&quot;&gt;Remember This!&lt;/span&gt;
+	&lt;&lt;/timed&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;
-	do something here send back or wait 
+&lt;&lt;else&gt;&gt; 
 	Wrong! [[Go Back!|GN21]]
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="TQC1_V" tags="" position="6414,4358" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
@@ -1932,13 +1961,13 @@ Type your answer:
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Try Again|thanos]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="TNC2" tags="" position="6253,4478" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="TNC2" tags="" position="6236,4474" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-As we know the ending of the infinite wars, let’s start from the climax. Since Thanos gets to know that Thor stabs him using storm breaker. Thanos decides to change the order to collect the infinity stone.
+As we know the ending of the infinity wars, let’s start from the climax. Since Thanos gets to know that Thor stabs him using storm breaker. Thanos decides to change the order to collect the infinity stone.
 Now he has to move back in time to restart.  
 In order to do so solve [[this question|TQC2]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="139" name="TQC2" tags="" position="6095,4629.333333333333" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="139" name="TQC2" tags="" position="6095,4629" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;timed 1s t8n&gt;&gt;
@@ -2027,9 +2056,10 @@ void main()
        printf(&quot;Incorrect answer \n&quot;);
  }
 }}}
- 
+
+Find the average of the elements of the matrix.
  Type your answer:
-&lt;&lt;textbox &quot;$TQC3ans&quot; &quot;1&quot;&gt;&gt; &lt;&lt;button [[Submit|TQC3_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;textbox &quot;$TQC3ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|TQC3_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
  &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="143" name="TQC3_V" tags="" position="6362,4924" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
@@ -2093,19 +2123,18 @@ Type your answer:
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="NC5A1" tags="" position="5508,6031" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-He gets to know that the stone is in Asgard. Now he travels to Asgard to get the stone but Heimdell is stopping him to enter so to kill him solve the [[question|QC5A1]]
+He gets to know that the stone is in Asgard. Now he travels to Asgard to get the stone but Heimdall is stopping him to enter so to kill him solve the [[question|QC5A1]]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="153" name="QC5A1" tags="" position="5640,6237" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 Hawk eye is present at Asgard to protect  Heimdel. He pulls back 0.75m on a bow which has a stiffness of 200 N/m. The arrow weighs 50g . Help thanos to find the velocity of the  arrow and to stop that.
-
-
+(answer precise upto 1 decimal point)
 Type your answer:
 &lt;&lt;textbox &quot;$QC5A1ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|QC5A1_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="154" name="QC5A1_V" tags="" position="5393,6246" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="154" name="QC5A1_V" tags="" position="5379,6219" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-&lt;&lt;if $QC5A1ans == &quot;47.4m/s&quot; or $QC5A1ans == &quot;47.4 m/s&quot; or $QC5A1ans == &quot;47.4 meters/second&quot; or $QC5A1ans == &quot;47.4meters/second&quot; or $QC5A1ans == &quot;47.4 meters/sec&quot; or $QC5A1ans == &quot;47.4 meters per second&quot;&gt;&gt;
+&lt;&lt;if $QC5A1ans == &quot;47.4m/s&quot; or $QC5A1ans == &quot;47.4 m/s&quot; or $QC5A1ans == &quot;47.4 meters/second&quot; or $QC5A1ans == &quot;47.4meters/second&quot; or $QC5A1ans == &quot;47.4 meters/sec&quot; or $QC5A1ans == &quot;47.4 meters per second&quot; or $QC5A1ans == &quot;47.4&quot;&gt;&gt;
 	Correct! [[Move Forward!|NC5A2]]
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Try Again|NC5A1]]
@@ -2138,7 +2167,7 @@ Type your answer:
 &lt;&lt;textbox &quot;$QC5A3ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|QC5A3_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="160" name="QC5A3_V" tags="" position="5372,6859" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-&lt;&lt;if $QC5A3ans == &quot;1&quot;&gt;&gt;
+&lt;&lt;if $QC5A3ans == &quot;5&quot;&gt;&gt;
 	Correct! [[Move Forward!|NC5A4]]
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Try Again|NC5A3]]
@@ -2146,20 +2175,19 @@ Type your answer:
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="161" name="NC5A4" tags="" position="5519,7011" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 After gaining the power of space stone he remembers that doctor strange has the time stone
-Clock’s ticking….. Rush to collect the time stone before the doctor sees the future. 
+Clock’s ticking... Rush to collect the time stone before the doctor sees the future. 
 He has to find out where doctor strange is as he has left the earth after getting to know that Thanos collected space stone and is coming for the time stone.
 He also gets to know that Hulk tells this information to them. In order to know the place where doctor has gone from Hulk solve the [[question|QC5A4]]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="162" name="QC5A4" tags="" position="5684,7144" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-******* not found yet*********
-
+&lt;img src=&quot;images/ans6.jpg&quot;&gt;
 
 Type your answer:
 &lt;&lt;textbox &quot;$QC5A4ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|QC5A4_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="163" name="QC5A4_V" tags="" position="5355,7149" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-&lt;&lt;if $QC5A4ans == &quot;1&quot;&gt;&gt;
+&lt;&lt;if $QC5A4ans == &quot;6&quot;&gt;&gt;
 	Correct! [[Move Forward!|NC5A5]]
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Try Again|NC5A4]]
@@ -2235,7 +2263,7 @@ Aftermath He grabs the stone from him but realises that it was an illusion so to
 &lt;div class=&quot;para&quot;&gt;
 Getting Real stone is not an easy task!! 
 Use your intellect and proceed. 
-The stone is over the floor which has an area of 56 m&lt;sup&gt;&lt;/sup&gt;. The minimum number of stones required, if all the stones are square shape is?
+The stone is over the floor which has an area of 56 m&lt;sup&gt;2&lt;/sup&gt;. The minimum number of stones required, if all the stones are square shape and of equal size?
 
 Type your answer:
 &lt;&lt;textbox &quot;$QC5A6ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|QC5A6_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -2252,15 +2280,15 @@ Type your answer:
 Now that Thanos has got the time stone he has to gain it power
 In order to do so  solve the [[question.|QC5A7]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="171" name="QC5A7" tags="" position="5721.666666666667,8019" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="171" name="QC5A7" tags="" position="5721,8019" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-add raksha&#39;s puzzle********
+&lt;img src=&quot;images/ans9.jpg&quot;&gt;
 
 Type your answer:
 &lt;&lt;textbox &quot;$QC5A7ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|QC5A7_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="172" name="QC5A7_V" tags="" position="5355.333333333333,8072.333333333333" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="172" name="QC5A7_V" tags="" position="5355,8072" size="100,100">\&lt;&lt;audio thanos_theme volume 1 play loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-&lt;&lt;if $QC5A7ans == &quot;1&quot;&gt;&gt;
+&lt;&lt;if $QC5A7ans == &quot;9&quot;&gt;&gt;
 	&lt;&lt;if $reality_stone&gt;&gt;
 		Correct! Now you have the powers of all the 3 stones... [[Move Forward!|TS2]]
 	&lt;&lt;else&gt;&gt;
@@ -2276,7 +2304,7 @@ he needs to go to earth and take the mind stone from vision. But is he ready to 
 To help him fight the army at Wakanda [[solve|QC5C4]] the question
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="174" name="QC5C1" tags="" position="6615,5737" size="100,100">&lt;div class=&quot;para&quot;&gt;
 Reality stone is fading out faster, If you run at 20km/hr then you&#39;ll reach 4 minutes late. If you run at 25km/hr you&#39;ll reach 2 minutes early. What is the distance you have to cover?
-
+(Enter with km)
 
 Type your answer:
 &lt;&lt;textbox &quot;$QC5C1ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|QC5C1_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -2294,28 +2322,22 @@ Help him to get it
 Solve the [[question|QC5C2]]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="177" name="QC5C2" tags="" position="6620,6149" size="100,100">&lt;div class=&quot;para&quot;&gt;
-&lt;span class=&quot;important_info&quot;&gt;Repeated in GOT&lt;/span&gt;
-In the world where everyone are bound to follow the routine methodologies, Star lords answers made sense and was right, despite the fact the world opposed them. Your answers to the puzzle below was appreciated by start lord.
-
-2+3=95
-4+5=259
-6+7=4913
-8+9=?
+Thanos wants to have a cup of coffee, He gets 2 sugar cubes of edge lengths x and y. He melts those 2 cubes
+and puts it in a container ; Ensuring there is no modification in the volume he creates another 2 sugar cubes
+with edge lengths z and a. Here x, y , z ,a are not identical. Find a&lt;sup&gt;3&lt;/sup&gt;.
 
 Type your answer:
 &lt;&lt;textbox &quot;$QC5C2ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|QC5C2_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="178" name="QC5C2_V" tags="" position="6296.666666666667,6108.666666666667" size="100,100">&lt;div class=&quot;para&quot;&gt;
-&lt;&lt;if $QC5C2ans == &quot;17&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="178" name="QC5C2_V" tags="" position="6296,6108" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $QC5C2ans == &quot;1729&quot;&gt;&gt;
 	Correct! [[Move Forward!|NC5C3]]
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Try Again|NC5C2]]
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="179" name="NC5C3" tags="" position="6462,6319" size="100,100">&lt;div class=&quot;para&quot;&gt;
 to unlock the reality stone  from the blade and get its power solve [[this question|QC5C3]] 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="180" name="QC5C3" tags="" position="6632,6513.666666666667" size="100,100">&lt;div class=&quot;para&quot;&gt;
-When the electromagnetic radiation of the reality stone of wavelength 300nm falls on the surface of metal, electrons are emitted with kinetic energy of 1.68 x 10&lt;sup&gt;5&lt;/sup&gt; J/mol. What is the maximum wavelength that will cause a photoelectron to be emitted.
-Name the colour emitted.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="180" name="QC5C3" tags="" position="6632,6513" size="100,100">&lt;div class=&quot;para&quot;&gt;
+When the electromagnetic radiation of the reality stone of wavelength 300nm falls on the surface of metal, electrons are emitted with kinetic energy of 1.68 x 10&lt;sup&gt;5&lt;/sup&gt; J/mol. Name the color of the radiation which corresponds to the maximum wavelength that causes photoelectric effect . 
 
 
 Type your answer:
@@ -2430,7 +2452,7 @@ Type your answer:
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="192" name="QC6B1" tags="" position="6690,9253" size="100,100">&lt;div class=&quot;para&quot;&gt;
 We need to safely remove the mind stone from vision so we need help of Shuri. She is very sensitive to the way people address her.  So help vision to request Shruri for the help
 You cannot yell!!! &#39;SHURI&#39; might go deaf.... and you cannot wisper &#39;shuri&#39; she might not hear!
-So Find the perfect ton by decoding the circuit below....
+So Find the perfect tone by decoding the circuit below....
 
 Hint: ThoR =&gt; 1001
 
@@ -2447,19 +2469,30 @@ Type your answer:
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="194" name="NC6B2" tags="" position="6597,9521" size="100,100">&lt;div class=&quot;para&quot;&gt;
 He gain the soul stone by giving soul of vision but is unable to gain its power.
 Help him to gain the power by solving the [[question|QC6B2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="QC6B2" tags="" position="6595,9829" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="QC6B2" tags="" position="6440,9915" size="100,100">&lt;div class=&quot;para&quot;&gt;
 Guess the name of the device below...
 &lt;img src=&quot;images/theo.jpg&quot; width=400&gt;
 
 Type your answer:
 &lt;&lt;textbox &quot;$QC6B2ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|QC6B2_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="196" name="QC6B2_V" tags="" position="5440.666666666667,9989.666666666666" size="100,100">\&lt;&lt;set $QC6B2ans = $QC6B2ans.toLowerCase()&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="196" name="QC6B2_V" tags="" position="5525,9951" size="100,100">\&lt;&lt;set $QC6B2ans = $QC6B2ans.toLowerCase()&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $QC6B2ans == &quot;theodolite&quot;&gt;&gt;
 	&lt;&lt;if $harry_tree and $danny_tree&gt;&gt;
-		Correct! [[Move Forward!|Climax]]
+		Congratulations!!! You have helped Thanos in his journey!!
+		Last bit of info needed to save gotham &quot;endgame&quot;
+		&lt;&lt;timed 3s transition&gt;&gt;
+			&lt;span class=&quot;slowfade&quot;&gt;[[next|Climax]]&lt;/span&gt;
+		&lt;&lt;/timed&gt;&gt;
 	&lt;&lt;else&gt;&gt;
-		Correct! [[Move Forward!|Insufficiency]]
+		Congratulations!!! You have helped Thanos in his journey!!
+	&lt;&lt;timed 3s transition&gt;&gt;
+		But...
+	&lt;&lt;/timed&gt;&gt;
+	&lt;&lt;timed 1s t8n&gt;&gt;
+		He has only obtained partial information that is &quot;endgame&quot;, you require [[more help|Insufficiency]]
+		&lt;span class=&quot;important_info&quot;&gt;Remember This!&lt;/span&gt;
+	&lt;&lt;/timed&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Try Again|NC6B2]]
@@ -2481,7 +2514,7 @@ Enter the code that you got after status submission:
 &lt;&lt;else&gt;&gt;
 	Please submit status [[Go Back!|HARRY_S_1]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="199" name="G_S_1" tags="" position="4626.333333333332,4811" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="199" name="G_S_1" tags="" position="4626,4811" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;span class=&quot;heading&quot;&gt;End of Stage 1&lt;/span&gt;
 &lt;div class=&quot;para&quot;&gt;
 Congratulations! You&#39;ve succesfully completed stage one...
@@ -2491,14 +2524,14 @@ Before you proceed [[Submit Status|https://goo.gl/forms/BhdybwHuLJhfr8H43]]
 Enter the code that you got after status submission:
 &lt;&lt;textbox &quot;$GS1ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|GS1_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="200" name="GS1_V" tags="" position="4788.666666666667,4924.333333333333" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="200" name="GS1_V" tags="" position="4788,4924" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $GS1ans == &quot;NYMERIA&quot;&gt;&gt;
 	[[Continue|GN3]]
 &lt;&lt;else&gt;&gt;
 	Please submit status [[Go Back!|G_S_1]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="201" name="GS3" tags="" position="4519.333333333333,8732" size="100,100">&lt;span class=&quot;heading&quot;&gt;End Of Stage 3&lt;/span&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="201" name="GS3" tags="" position="4519,8732" size="100,100">&lt;span class=&quot;heading&quot;&gt;End Of Stage 3&lt;/span&gt;
 &lt;div class=&quot;para&quot;&gt;
 Congratulations! You&#39;ve succesfully completed stage three...
 Before you proceed [[Submit Status|https://goo.gl/forms/ZaUhASghxuiOQdY03]]
@@ -2507,13 +2540,13 @@ Before you proceed [[Submit Status|https://goo.gl/forms/ZaUhASghxuiOQdY03]]
 Enter the code that you got after status submission:
 &lt;&lt;textbox &quot;$GS3ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|GS3_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="202" name="GS3_V" tags="" position="4476,8880.333333333334" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="202" name="GS3_V" tags="" position="4476,8880" size="100,100">&lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $GS3ans == &quot;OBERYN&quot;&gt;&gt;
 	[[Continue|GN12]]
 &lt;&lt;else&gt;&gt;
 	Please submit status [[Go Back!|GS3]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="203" name="TS1" tags="" position="6548.666666666667,4839" size="100,100">\&lt;&lt;audio thanos_theme stop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="203" name="TS1" tags="" position="6548,4839" size="100,100">\&lt;&lt;audio thanos_theme stop&gt;&gt;
 &lt;span class=&quot;heading&quot;&gt;End Of Stage 1&lt;/span&gt;
 &lt;div class=&quot;para&quot;&gt;
 Congratulations! You&#39;ve succesfully completed stage one...
@@ -2523,14 +2556,14 @@ Before you proceed [[Submit Status|https://goo.gl/forms/mxIz4myWwS7k3atE3]]
 Enter the code that you got after status submission:
 &lt;&lt;textbox &quot;$TS1ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|TS1_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="204" name="TS1_V" tags="" position="6634.666666666666,4965" size="100,100">\&lt;&lt;audio thanos_theme stop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="204" name="TS1_V" tags="" position="6661,4965" size="100,100">\&lt;&lt;audio thanos_theme stop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $TS1ans == &quot;NEBULA&quot;&gt;&gt;
 	[[Continue|TNC4]]
 &lt;&lt;else&gt;&gt;
 	Please submit status [[Go Back!|TS1]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="205" name="TS2" tags="" position="6014.666666666668,8380.999999999998" size="100,100">\&lt;&lt;audio thanos_theme stop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="205" name="TS2" tags="" position="6014,8380" size="100,100">\&lt;&lt;audio thanos_theme stop&gt;&gt;
 &lt;span class=&quot;heading&quot;&gt;End Of Stage 2&lt;/span&gt;
 &lt;div class=&quot;para&quot;&gt;
 Congratulations! You&#39;ve succesfully completed stage two...
@@ -2541,12 +2574,56 @@ Enter the code that you got after status submission:
 &lt;&lt;textbox &quot;$TS2ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|TS2_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="206" name="TS2_V" tags="" position="6293.000000000001,8334.333333333332" size="100,100">\&lt;&lt;audio thanos_theme stop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="206" name="TS2_V" tags="" position="6293,8334" size="100,100">\&lt;&lt;audio thanos_theme stop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $TS2ans == &quot;MANTIS&quot;&gt;&gt;
 	[[Continue|NC5C4]]
 &lt;&lt;else&gt;&gt;
 	Please submit status [[Go Back!|TS2]]
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="207" name="BAT" tags="" position="638,13" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;span class=&quot;slowfade&quot;&gt;
+&lt;&lt;timed 1s t8n&gt;&gt;
+Nobody panics when things go &quot;according to plan&quot;. Even if the plan is horrifying!!! 
+&lt;&lt;/timed&gt;&gt;
+&lt;/span&gt;
+&lt;span class=&quot;slowfade&quot;&gt;
+&lt;&lt;timed 2s t8n&gt;&gt;
+	Joker has planted a bomb in Arkham Asylum and whole justice league has fallen in to jokers manipulative mind game, only batman can save the people of gotham.
+	&lt;&lt;/timed&gt;&gt;
+&lt;/span&gt;
+
+&lt;&lt;timed 3s t8n&gt;&gt;
+But...
+&lt;&lt;/timed&gt;&gt;
+&lt;span class=&quot;slowfade&quot;&gt;
+&lt;&lt;timed 4s&gt;&gt;
+He is fighting multidimensional space invaders in the multiverse
+Alfred has a time machine, using which you need to travel to different universes to find BATMAN!!!&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+[[Begin Quest!|Q0]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="208" name="CV" tags="" position="199,4530" size="100,100">&lt;div class=&quot;para&quot;&gt;
+&lt;&lt;if $Cans == &quot;The Joker&#39;s endgame is here!!!&quot;&gt;&gt;
+	&lt;&lt;timed 1s t8n&gt;&gt;
+	This info is being transmitted in to the multiverse!!!
+	&lt;&lt;/timed&gt;&gt;
+	&lt;&lt;timed 1s t8n&gt;&gt;
+	Hurray batman heard it!!!
+	&lt;&lt;/timed&gt;&gt;
+	&lt;&lt;timed 2s t8n&gt;&gt;
+	Batman arrives!!!
+	&lt;&lt;/timed&gt;&gt;
+	&lt;&lt;timed 3s t8n&gt;&gt;
+	He Diffuses the bomb and saves the city yet again!!!!
+	&lt;&lt;/timed&gt;&gt;
+	&lt;&lt;timed 4s t8n&gt;&gt;
+	You were aMAZE-ing!!! 
+	&lt;&lt;/timed&gt;&gt;
+	&lt;&lt;timed 5s t8n&gt;&gt;
+	[[Click here...|https://goo.gl/forms/yPoBDN8FCxu2EdVw2]]
+	&lt;&lt;/timed&gt;&gt;
+&lt;&lt;else&gt;&gt;
+	Wrong! [[Try Again|TNC3]]
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
