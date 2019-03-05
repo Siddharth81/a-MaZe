@@ -241,6 +241,7 @@ a:hover {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/*Config.saves.autosave = "autosave";
 
 Config.saves.autoload = "prompt";
@@ -288,6 +289,7 @@ Config.saves.autoload = "prompt";
 
 
 
+
 </script><tw-passagedata pid="1" name="Intro" tags="autosave" position="902,125" size="100,100">&lt;&lt;timed 0.3s&gt;&gt;&lt;&lt;audio typing volume 1 play&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;typed-speed58&quot;&gt;
 &lt;span class=&quot;heading&quot;&gt;Welcome cave-dweller!!&lt;/span&gt;\
@@ -296,7 +298,7 @@ Config.saves.autoload = "prompt";
 So boost yourselves up, to embark on this exciting adventure!!! 
 Kick start your journey using your wits...&lt;/p&gt;\
 &lt;/div&gt;
-&lt;span class=&quot;slowfade para&quot;&gt;&lt;&lt;timed 28s transition&gt;&gt;[[Lets Begin!|BAT]]&lt;&lt;/timed&gt;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="5901.666666666667,4200.999999999999" size="100,100">&lt;&lt;cacheaudio &quot;typing&quot; &quot;music/typing.wav&quot;&gt;&gt;
+&lt;span class=&quot;slowfade para&quot;&gt;&lt;&lt;timed 28s transition&gt;&gt;[[Lets Begin!|BAT]]&lt;&lt;/timed&gt;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="5901,4200" size="100,100">&lt;&lt;cacheaudio &quot;typing&quot; &quot;music/typing.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;harry_theme&quot; &quot;music/HarryTheme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;got_theme&quot; &quot;music/GotTheme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;thanos_theme&quot; &quot;music/ThanosTheme.mp3&quot;&gt;&gt;
@@ -650,7 +652,7 @@ Darn it, the car won&#39;t start! [[Try Again!|flying car]]
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-	</tw-passagedata><tw-passagedata pid="24" name="GN1" tags="autosave" position="4373,4491.666666666667" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+	</tw-passagedata><tw-passagedata pid="24" name="GN1" tags="autosave" position="4373,4491" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;Dany leaves Essos and travels with the Dothraki being the new Khaleesi. Though she was new to the tradition and culture, understanding dothraki was tougher. In order to help her learn Dothraki solve the [[next question|GQ1]].
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="25" name="GQ1" tags="autosave" position="4159,4622" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
@@ -818,18 +820,18 @@ int main()
 }}}
 
 &lt;&lt;textbox &quot;$BR2_Q2ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|BR2_Q2_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="BR2_Q2_V" tags="autosave" position="4132.666666666667,5439" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="BR2_Q2_V" tags="autosave" position="4098.666666666667,5402.333333333333" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;&lt;if $BR2_Q2ans == &quot;34&quot;&gt;&gt;
 	&lt;p class=&quot;para&quot;&gt;
 	Hard luck!! You took more time to solve, so she remains there forever. &lt;/p&gt;
 	&lt;h1 id=&quot;warn_text1&quot; class=&quot;heading&quot;&gt;Wait Here For 5 minutes!&lt;/h1&gt;
 	&lt;p id = &quot;timer1&quot; class=&quot;para&quot;&gt;&lt;/p&gt;
-	\&lt;&lt;timed 10s transition&gt;&gt;
+	\&lt;&lt;timed 300s transition&gt;&gt;
 	\&lt;&lt;replace #warn_text1&gt;&gt;Rejoice your wait is over!&lt;&lt;/replace&gt;&gt;
 	\&lt;span class=&quot;slowfade para&quot;&gt;[[Try Again!|GN3]]&lt;/span&gt;
 	\&lt;&lt;/timed&gt;&gt;
 	&lt;&lt;script&gt;&gt;
-		var seconds = 10;
+		var seconds = 300;
 		var timer1 = setInterval(function(){
  		seconds--;
   		$(&quot;#timer1&quot;).text(seconds + &quot; seconds left!&quot;);
@@ -1163,7 +1165,7 @@ Type your answer:
 &lt;div class=&quot;para&quot;&gt;
 	\&lt;span id=&quot;wait_text&quot; class=&quot;slowfade heading&quot;&gt;Wait For 5 Minutes!&lt;/span&gt;
 	\&lt;p id=&quot;timer_uw&quot;&gt;&lt;/p&gt;
-	\&lt;&lt;timed 20s t8n&gt;&gt;
+	\&lt;&lt;timed 300s t8n&gt;&gt;
 	\&lt;p class=&quot;slowfade para&quot;&gt;[[Phew!!! That took ages! move ahead|HN7aw]]&lt;/p&gt;
 	\&lt;&lt;replace #wait_text&gt;&gt;You&#39;re Wait is Over&lt;&lt;/replace&gt;&gt;
 	\&lt;&lt;/timed&gt;&gt;
@@ -1266,7 +1268,9 @@ Think you got this one?
   			}
 		}, 1000)	
 	&lt;&lt;/script&gt;&gt;
+	&lt;&lt;timed 144s t8n&gt;&gt;
 	Correct [[Move Ahead|HN8]]
+	&lt;&lt;/timed&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Go Back!|teleport]]
 &lt;&lt;/if&gt;&gt;
@@ -1647,7 +1651,7 @@ Type your answer:
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Try Again!|p_decline]]
 &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="w_wans_V" tags="" position="3704.6666666666665,8759" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="w_wans_V" tags="" position="3704,8759" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $w_wans == 766&gt;&gt;
 	You are really good with numbers!!! [[Move Forward!|GN10]]
@@ -1665,7 +1669,7 @@ Type your answer:
 &lt;/div&gt;
 
 
-</tw-passagedata><tw-passagedata pid="105" name="GQ10_V" tags="" position="3829,8897.333333333334" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="105" name="GQ10_V" tags="" position="3829,8897" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
 &lt;&lt;if $GQ10ans == &quot;HLPT&quot;&gt;&gt;
 	Good! [[Continue|GN11]]
@@ -2324,7 +2328,7 @@ Solve the [[question|QC5C2]]
 </tw-passagedata><tw-passagedata pid="177" name="QC5C2" tags="" position="6620,6149" size="100,100">&lt;div class=&quot;para&quot;&gt;
 Thanos wants to have a cup of coffee, He gets 2 sugar cubes of edge lengths x and y. He melts those 2 cubes
 and puts it in a container ; Ensuring there is no modification in the volume he creates another 2 sugar cubes
-with edge lengths z and a. Here x, y , z ,a are not identical. Find a&lt;sup&gt;3&lt;/sup&gt;.
+with edge lengths z and a. Here x, y , z ,a are not identical. Find a&lt;sup&gt;3&lt;/sup&gt; + z&lt;sup&gt;3&lt;/sup&gt;.
 
 Type your answer:
 &lt;&lt;textbox &quot;$QC5C2ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|QC5C2_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
