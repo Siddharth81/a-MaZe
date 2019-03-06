@@ -102,7 +102,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="aMaZe" startnode="6" creator="Twine" creator-version="2.2.1" ifid="4ABE7286-8564-40C6-A25B-76F92E37EF76" zoom="0.6" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+	<div id="store-area" hidden><tw-storydata name="aMaZe" startnode="6" creator="Twine" creator-version="2.2.1" ifid="4ABE7286-8564-40C6-A25B-76F92E37EF76" zoom="0.25" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
 	background: white;
   	background-size: 100%;
 }
@@ -1196,7 +1196,7 @@ Type your answer:
 &lt;div class=&quot;para&quot;&gt;
 Solve the following questions to move forward:
 
-Q1: A small number of cards has been lost from a complete pack. If I deal among four people, three cars remain. If I deal among three people, two remain and if I deal among five people, two cars remain. How many cards are there?
+Q1: A small number of cards has been lost from a complete pack. If I deal among four people, three cards remain. If I deal among three people, two remain and if I deal among five people, two cards remain. How many cards are there?
 
 Type your answer:
 &lt;&lt;textbox &quot;$HN7aans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|HN7a_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -1492,7 +1492,7 @@ Type your answer:
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-&lt;&lt;if _iflag&gt;&gt;
+&lt;&lt;if _iflag or $GQ7_jaans == &quot;1&quot;&gt;&gt;
 	&lt;&lt;if $wentwithDaario&gt;&gt;
 		&lt;span class=&quot;para&quot;&gt;You&#39;re really smart... [[Move Ahead|GN8]]&lt;/span&gt;
 	&lt;&lt;else&gt;&gt;
@@ -1773,9 +1773,10 @@ For rest of the alphabets, find out how their equivalent numerical values are ca
 
 Type your answer:
 &lt;&lt;textbox &quot;$GQ15ans&quot; &quot;&quot;&gt;&gt; &lt;&lt;button [[Submit|GQ15_V]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="GQ15_V" tags="" position="4367,9881" size="100,100">\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="GQ15_V" tags="" position="4367,9881" size="100,100">\&lt;&lt;set $GQ15ans = $GQ15ans.toLowerCase()&gt;&gt;
+\&lt;&lt;audio got_theme play volume 1 loop&gt;&gt;
 &lt;div class=&quot;para&quot;&gt;
-&lt;&lt;if $GQ15ans == &quot;AE&quot;&gt;&gt;
+&lt;&lt;if $GQ15ans == &quot;ae&quot;&gt;&gt;
 	Correct! You gained another egg! [[Continue|GN16]]
 &lt;&lt;else&gt;&gt;
 	Wrong! [[Go Back!|GN15]]
